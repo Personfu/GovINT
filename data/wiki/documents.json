@@ -1,0 +1,174 @@
+{
+  "documents": [
+    {
+      "az_relevance": "Arizona is among the top states for UAP reports, with multiple military ranges and restricted airspace.",
+      "date": null,
+      "filename": "139.pdf",
+      "highlights": [
+        "UAP classification frameworks",
+        "Military encounter documentation protocols"
+      ],
+      "id": "doc-139",
+      "issuing_body": "Unknown / Declassified",
+      "reliability": "declassified",
+      "summary": "Referenced declassified document related to unidentified aerial phenomena. Part of broader government disclosure efforts.",
+      "title": "Document 139 — Unidentified Aerial Phenomena Report",
+      "topics": [
+        "anomaly",
+        "ufo",
+        "classified"
+      ]
+    },
+    {
+      "az_relevance": "Arizona hosts more active DoD installations than nearly any other state — Luke AFB, Davis-Monthan, Fort Huachuca, Yuma Proving Ground, Barry Goldwater Range.",
+      "date": null,
+      "filename": "Document-48-Department-of-Defense-DoD.pdf",
+      "highlights": [
+        "Defense policy frameworks",
+        "Installation operational guidelines"
+      ],
+      "id": "doc-48-dod",
+      "issuing_body": "Department of Defense",
+      "reliability": "official",
+      "summary": "DoD policy document addressing defense operations, potentially related to installation management or operational security.",
+      "title": "Document 48 — Department of Defense Policy",
+      "topics": [
+        "defense",
+        "policy"
+      ]
+    },
+    {
+      "az_relevance": "Fort Huachuca is the Army's primary intelligence training center. NSA facility presence in southern Arizona.",
+      "date": "2013-08-01",
+      "filename": "20130801 R41108.pdf",
+      "highlights": [
+        "IC budget analysis",
+        "Oversight structure",
+        "Intelligence agency roles and missions"
+      ],
+      "id": "crs-r41108",
+      "issuing_body": "Congressional Research Service",
+      "reliability": "official",
+      "summary": "Congressional Research Service report providing an overview of the U.S. Intelligence Community structure, budget, and oversight mechanisms.",
+      "title": "CRS Report R41108 — Intelligence Community Overview",
+      "topics": [
+        "classified",
+        "defense",
+        "policy"
+      ]
+    },
+    {
+      "az_relevance": "CIA operations and training have historical ties to Arizona military installations and desert terrain.",
+      "date": null,
+      "filename": "CIA-RDP85M00158R001000060021-4.pdf",
+      "highlights": [
+        "Declassified intelligence",
+        "Cold War era documentation"
+      ],
+      "id": "cia-rdp85m",
+      "issuing_body": "Central Intelligence Agency",
+      "reliability": "declassified",
+      "summary": "Declassified CIA document from the RDP85M series. Released through FOIA or mandatory declassification review.",
+      "title": "CIA-RDP85M00158R001000060021-4",
+      "topics": [
+        "classified",
+        "history"
+      ]
+    },
+    {
+      "az_relevance": "Yuma Proving Ground tests autonomous systems. Fort Huachuca develops AI for military intelligence. Arizona universities lead AI research.",
+      "date": null,
+      "filename": "artificial intelligence r[15424923].pdf",
+      "highlights": [
+        "AI policy frameworks",
+        "Military AI applications",
+        "Autonomous systems testing"
+      ],
+      "id": "ai-report",
+      "issuing_body": "Government / Research",
+      "reliability": "official",
+      "summary": "Report on AI applications in government and defense contexts. Addresses machine learning, autonomous systems, and policy implications.",
+      "title": "Artificial Intelligence in Government & Defense",
+      "topics": [
+        "cyber",
+        "defense",
+        "research"
+      ]
+    },
+    {
+      "az_relevance": "Historical intelligence operations with possible connections to southwestern US facilities.",
+      "date": null,
+      "filename": "CIA-RDP82M00531R000400190025-8.pdf",
+      "highlights": [
+        "Intelligence operations",
+        "Declassified analysis"
+      ],
+      "id": "cia-rdp82m-0531",
+      "issuing_body": "Central Intelligence Agency",
+      "reliability": "declassified",
+      "summary": "Declassified CIA document from the RDP82M series. Intelligence community operations and analysis.",
+      "title": "CIA-RDP82M00531R000400190025-8",
+      "topics": [
+        "classified",
+        "history"
+      ]
+    },
+    {
+      "az_relevance": "Fort Huachuca trains intelligence professionals in multiple collection disciplines. SIGINT operations in southern AZ.",
+      "date": null,
+      "filename": "collection game roles[15351434].pdf",
+      "highlights": [
+        "HUMINT collection methods",
+        "SIGINT overview",
+        "OSINT methodology",
+        "Collection discipline integration"
+      ],
+      "id": "collection-game-roles",
+      "issuing_body": "Intelligence Community",
+      "reliability": "official",
+      "summary": "Overview of intelligence collection disciplines: HUMINT, SIGINT, IMINT, MASINT, OSINT. Roles and responsibilities within the IC.",
+      "title": "Intelligence Collection Disciplines & Roles",
+      "topics": [
+        "classified",
+        "defense",
+        "research"
+      ]
+    },
+    {
+      "az_relevance": "Cold War era programs utilized Arizona's remote desert for testing, training, and classified operations.",
+      "date": null,
+      "filename": "CIA-RDP79-00927A005600030002-8.pdf",
+      "highlights": [
+        "Cold War intelligence",
+        "Declassified operations"
+      ],
+      "id": "cia-rdp79",
+      "issuing_body": "Central Intelligence Agency",
+      "reliability": "declassified",
+      "summary": "Declassified CIA document from the RDP79 series. Potentially Cold War era intelligence analysis or operational reporting.",
+      "title": "CIA-RDP79-00927A005600030002-8",
+      "topics": [
+        "classified",
+        "history"
+      ]
+    },
+    {
+      "az_relevance": "Part of broader declassified document collection with potential Arizona references in military and intelligence contexts.",
+      "date": null,
+      "filename": "CIA-RDP82-00850R000400020016-8.pdf",
+      "highlights": [
+        "Declassified intelligence analysis",
+        "Historical operations"
+      ],
+      "id": "cia-rdp82-0850",
+      "issuing_body": "Central Intelligence Agency",
+      "reliability": "declassified",
+      "summary": "Declassified CIA document from the RDP82 series. Released through declassification review processes.",
+      "title": "CIA-RDP82-00850R000400020016-8",
+      "topics": [
+        "classified",
+        "history"
+      ]
+    }
+  ]
+}

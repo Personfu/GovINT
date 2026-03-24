@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Timelines — PERSONFU // Arizona Public Intel Wiki</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <h1><span class="accent">PERSONFU</span><span class="sep">//</span>ARIZONA PUBLIC INTEL WIKI</h1>
+  </div>
+  <div class="header-meta">
+    <span class="site-tagline">FLLC Intelligence Research &amp; Archive</span>
+    <span class="header-clock" id="header-clock"></span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="arizona.html" class="nav-link">Arizona Watch</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="government.html" class="nav-link">Government</a>
+  <a href="defense.html" class="nav-link">Defense</a>
+  <a href="borders.html" class="nav-link">Border &amp; Safety</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="anomalies.html" class="nav-link">Anomalies</a>
+  <a href="timelines.html" class="nav-link active">Timelines</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="documents.html" class="nav-link">Documents</a>
+  <a href="methodology.html" class="nav-link">Methodology</a>
+</nav>
+<div class="page-wrap">
+  <div class="section-hero">
+    <h2>Timelines</h2>
+    <p>Chronological threads through Arizona history — military, water politics, anomalies, and more. Each event is sourced and reliability-tagged.</p>
+    <span class="rel-badge rel-verified">SOURCED</span>
+  </div>
+
+  <div class="filter-bar mb-2">
+    <label>Timeline</label>
+    <select id="tl-select" onchange="loadTimeline(this.value)">
+      <option value="">Select a timeline...</option>
+    </select>
+  </div>
+
+  <div id="tl-content"><div class="text-muted" style="padding:20px;text-align:center">Select a timeline above to begin</div></div>
+</div>
+<footer class="site-footer">
+  <div class="methodology">
+    <strong>METHODOLOGY:</strong> This wiki aggregates public-interest information from official government sources, FOIA releases,
+    and lawful public records for education and research. Content is tagged with reliability labels.
+    <a href="methodology.html">Full Methodology &rarr;</a>
+  </div>
+  <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>FLLC // PERSONFU</span>
+  <span>|</span>
+  <span id="status-update">Last update: &mdash;</span>
+  <span style="margin-left:auto">Educational &amp; Research Use Only</span>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+<script>
+var allTimelines=[];
+FeedLoader.loadFile('data/wiki/timelines.json', function(d){
+  if(!d||!d.timelines) return;
+  allTimelines=d.timelines;
+  var sel=document.getElementById('tl-select');
+  d.timelines.forEach(function(t){
+    var opt=document.createElement('option');
+    opt.value=t.id;
+    opt.textContent=t.title+' ('+t.events.length+' events)';
+    sel.appendChild(opt);
+  });
+  if(d.timelines.length) {sel.value=d.timelines[0].id; loadTimeline(d.timelines[0].id);}
+});
+function loadTimeline(id){
+  var el=document.getElementById('tl-content');
+  var tl=allTimelines.find(function(t){return t.id===id;});
+  if(!tl){el.innerHTML='<div class="text-muted">Select a timeline</div>';return;}
+  var h='<h3 class="page-title" style="font-size:16px;margin-bottom:16px">'+tl.title+'</h3>';
+  h+='<div class="timeline">';
+  tl.events.forEach(function(e){
+    h+='<div class="timeline-event"><div class="tl-date">'+e.date+'</div>';
+    h+='<div class="tl-title">'+e.title+'</div>';
+    h+='<div class="tl-body">'+e.body;
+    if(e.reliability) h+=' <span class="rel-badge rel-'+e.reliability+'">'+e.reliability+'</span>';
+    h+='</div>';
+    if(e.topics){
+      h+='<div style="margin-top:4px">';
+      e.topics.forEach(function(t){h+='<span class="tag tag-'+t+'" style="margin:1px">'+t+'</span>';});
+      h+='</div>';
+    }
+    h+='</div>';
+  });
+  h+='</div>';
+  el.innerHTML=h;
+}
+</script>
+</body>
+</html>

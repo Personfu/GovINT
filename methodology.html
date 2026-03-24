@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — PERSONFU // Arizona Public Intel Wiki</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <h1><span class="accent">PERSONFU</span><span class="sep">//</span>ARIZONA PUBLIC INTEL WIKI</h1>
+  </div>
+  <div class="header-meta">
+    <span class="site-tagline">FLLC Intelligence Research &amp; Archive</span>
+    <span class="header-clock" id="header-clock"></span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="arizona.html" class="nav-link">Arizona Watch</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="government.html" class="nav-link">Government</a>
+  <a href="defense.html" class="nav-link">Defense</a>
+  <a href="borders.html" class="nav-link">Border &amp; Safety</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="anomalies.html" class="nav-link">Anomalies</a>
+  <a href="timelines.html" class="nav-link">Timelines</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="documents.html" class="nav-link">Documents</a>
+  <a href="methodology.html" class="nav-link active">Methodology</a>
+</nav>
+<div class="page-wrap">
+  <div class="section-hero">
+    <h2>Methodology &amp; About</h2>
+    <p>How this wiki works: sourcing standards, reliability labels, editorial policy, and what this project is (and isn't).</p>
+  </div>
+
+  <div class="grid-2 mb-2">
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>What Is This?</div>
+      <div class="card-body prose">
+        <p>The <strong>Personfu Arizona Public Intel Wiki</strong> is an open-source intelligence (OSINT) aggregation and research project built under the <strong>FLLC</strong> design system.</p>
+        <p>It collects, organizes, and presents publicly available information about Arizona's government operations, cybersecurity landscape, defense installations, border infrastructure, water politics, and historical anomalies.</p>
+        <h3>What It Is</h3>
+        <ul>
+          <li>An educational research tool</li>
+          <li>A public records aggregator</li>
+          <li>A FOIA/declassification document vault</li>
+          <li>An OSINT methodology demonstration</li>
+        </ul>
+        <h3>What It Is Not</h3>
+        <ul>
+          <li>Not affiliated with any government agency</li>
+          <li>Not a source of classified information</li>
+          <li>Not a news organization</li>
+          <li>Not a conspiracy theory platform</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot gold"></span>Reliability Scale</div>
+      <div class="card-body" id="method-scale"><div class="loading">Loading scale</div></div>
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-head"><span class="dot violet"></span>Sourcing Standards</div>
+    <div class="card-body prose">
+      <h3>Source Hierarchy</h3>
+      <ol>
+        <li><strong>Primary government sources</strong> — Official .gov websites, RSS feeds, press releases, court records</li>
+        <li><strong>FOIA releases</strong> — Documents obtained through Freedom of Information Act requests</li>
+        <li><strong>Declassified documents</strong> — CIA Reading Room, National Archives, agency declassification programs</li>
+        <li><strong>Congressional records</strong> — CRS reports, hearing transcripts, GAO audits</li>
+        <li><strong>Credible journalism</strong> — Established outlets with editorial standards; always secondary to primary sources</li>
+        <li><strong>Academic research</strong> — Peer-reviewed publications and university research</li>
+        <li><strong>Witness testimony</strong> — Named individuals with documented accounts; labeled accordingly</li>
+      </ol>
+      <h3>What We Don't Use</h3>
+      <ul>
+        <li>Anonymous social media posts without corroboration</li>
+        <li>Paywalled content that can't be verified</li>
+        <li>Classified or leaked materials</li>
+        <li>Sources that cannot be independently checked</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-head"><span class="dot"></span>Technical Architecture</div>
+    <div class="card-body prose">
+      <h3>Data Pipeline</h3>
+      <p>Automated Python scripts run daily via GitHub Actions, collecting from:</p>
+      <ul>
+        <li>CISA — Advisories and Known Exploited Vulnerabilities catalog</li>
+        <li>FBI — Cyber division press releases</li>
+        <li>DOJ — Cybercrime and national security press</li>
+        <li>DHS — Department-wide news and alerts</li>
+        <li>NWS — National Weather Service API for Arizona zones</li>
+        <li>FAA/NOTAM — Aviation alerts and restrictions</li>
+        <li>.gov Registry — Full domain catalog (15,000+ entries)</li>
+        <li>AZ511 — 44 live traffic camera feeds</li>
+      </ul>
+      <h3>Technology</h3>
+      <p>Static site hosted on GitHub Pages. No server-side processing. All data is pre-fetched JSON.
+      Frontend is vanilla HTML/CSS/JS with Leaflet for maps and Canvas for charts.</p>
+      <p>Source code: <a href="https://github.com/Personfu/GovINT" target="_blank" rel="noopener">github.com/Personfu/GovINT</a></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="dot"></span>Content Topics</div>
+    <div class="card-body" id="method-topics"><div class="loading">Loading topics</div></div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="methodology">
+    <strong>METHODOLOGY:</strong> This wiki aggregates public-interest information from official government sources, FOIA releases,
+    and lawful public records for education and research. Content is tagged with reliability labels.
+    <a href="methodology.html">Full Methodology &rarr;</a>
+  </div>
+  <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>FLLC // PERSONFU</span>
+  <span>|</span>
+  <span id="status-update">Last update: &mdash;</span>
+  <span style="margin-left:auto">Educational &amp; Research Use Only</span>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+<script>
+FeedLoader.loadFile('data/wiki/reliability-scale.json', function(d){
+  var el=document.getElementById('method-scale');
+  if(!d||!d.scale){el.innerHTML='No data';return;}
+  var h='<table class="data-tbl"><tr><th>Label</th><th>Meaning</th></tr>';
+  d.scale.forEach(function(s){
+    h+='<tr><td><span class="rel-badge '+s.class+'">'+s.label+'</span></td>';
+    h+='<td>'+s.description+'</td></tr>';
+  });
+  h+='</table>';
+  el.innerHTML=h;
+});
+FeedLoader.loadFile('data/wiki/topics.json', function(d){
+  var el=document.getElementById('method-topics');
+  if(!d||!d.topics){el.innerHTML='No data';return;}
+  var h='<div style="display:flex;flex-wrap:wrap;gap:6px">';
+  d.topics.forEach(function(t){
+    h+='<span class="tag '+t.tag_class+'">'+t.icon+' '+t.label+'</span>';
+  });
+  h+='</div>';
+  el.innerHTML=h;
+});
+</script>
+</body>
+</html>

@@ -3,68 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard — GOVINT // FLLC</title>
+<title>Mission Control — PERSONFU // Arizona Public Intel Wiki</title>
 <link rel="stylesheet" href="assets/css/fllc-govint.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
 <header class="site-header">
   <div class="site-brand">
-    <h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1>
+    <h1><span class="accent">PERSONFU</span><span class="sep">//</span>ARIZONA PUBLIC INTEL WIKI</h1>
   </div>
   <div class="header-meta">
-    <span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span>
+    <span class="site-tagline">FLLC Intelligence Research &amp; Archive</span>
     <span class="header-clock" id="header-clock"></span>
   </div>
 </header>
 <nav class="nav-bar">
   <a href="index.html" class="nav-link active">Dashboard</a>
+  <a href="arizona.html" class="nav-link">Arizona Watch</a>
   <a href="cyber.html" class="nav-link">Cyber</a>
-  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="government.html" class="nav-link">Government</a>
+  <a href="defense.html" class="nav-link">Defense</a>
+  <a href="borders.html" class="nav-link">Border &amp; Safety</a>
   <a href="infrastructure.html" class="nav-link">Infrastructure</a>
-  <a href="aviation.html" class="nav-link">Aviation</a>
-  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="anomalies.html" class="nav-link">Anomalies</a>
+  <a href="timelines.html" class="nav-link">Timelines</a>
   <a href="maps.html" class="nav-link">Maps</a>
   <a href="reports.html" class="nav-link">Reports</a>
-  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="documents.html" class="nav-link">Documents</a>
+  <a href="methodology.html" class="nav-link">Methodology</a>
 </nav>
 
 <div class="ticker-wrap">
   <div class="ticker-label">LIVE FEED</div>
   <div class="ticker-track">
     <div class="ticker-items" id="ticker">
-      <span class="t-src">CISA</span> <span>Loading latest advisories...</span>
+      <span class="t-src">SYSTEM</span> <span>Loading latest intel...</span>
     </div>
   </div>
 </div>
 
 <div class="page-wrap">
-  <div class="page-title">GOVINT // FLLC PUBLIC INTEL CONSOLE</div>
-  <div class="page-sub">Daily cyber, infrastructure, and government-source reporting for education, research, and public awareness</div>
-
-  <div class="grid-4 mb-2">
-    <div class="kpi"><div class="kpi-val" id="kpi-advisories">—</div><div class="kpi-label">Advisories Today</div></div>
-    <div class="kpi"><div class="kpi-val blue" id="kpi-agencies">12</div><div class="kpi-label">Agencies Monitored</div></div>
-    <div class="kpi"><div class="kpi-val green" id="kpi-cameras">—</div><div class="kpi-label">Camera Pages Indexed</div></div>
-    <div class="kpi"><div class="kpi-val amber" id="kpi-update">—</div><div class="kpi-label">Last Update</div></div>
+  <div class="section-hero">
+    <h2>Mission Control</h2>
+    <p>Public intelligence aggregation covering Arizona cybersecurity, government operations, defense installations, border infrastructure, declassified history, and anomalies. All sources public. All data verifiable.</p>
+    <div style="margin-top:12px">
+      <span class="rel-badge rel-official">PUBLIC SOURCES ONLY</span>
+      <span class="rel-badge rel-verified" style="margin-left:4px">EDUCATIONAL USE</span>
+    </div>
   </div>
 
-  <div class="grid-3">
+  <div class="grid-4 mb-2">
+    <div class="kpi"><div class="kpi-val" id="kpi-advisories">&mdash;</div><div class="kpi-label">Advisories Today</div></div>
+    <div class="kpi"><div class="kpi-val violet" id="kpi-agencies">15</div><div class="kpi-label">Agencies Tracked</div></div>
+    <div class="kpi"><div class="kpi-val green" id="kpi-cameras">&mdash;</div><div class="kpi-label">Live Cameras</div></div>
+    <div class="kpi"><div class="kpi-val gold" id="kpi-update">&mdash;</div><div class="kpi-label">Last Update</div></div>
+  </div>
+
+  <div class="grid-3 mb-2">
     <div class="card span-2">
       <div class="card-head"><span class="dot red"></span>Latest Cyber Advisories</div>
       <div class="card-body" id="dash-cyber"><div class="loading">Loading CISA / FBI / DOJ advisories</div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="dot"></span>Category Breakdown</div>
-      <div class="card-body"><canvas id="chart-categories"></canvas></div>
+      <div class="card-head"><span class="dot magenta"></span>Featured Rabbit Hole</div>
+      <div class="card-body" id="dash-rabbit"><div class="loading">Loading featured deep-dive</div></div>
     </div>
-
     <div class="card">
-      <div class="card-head"><span class="dot blue"></span>Map Preview — Public Alert Regions</div>
+      <div class="card-head"><span class="dot blue"></span>Arizona Map &mdash; Key Locations</div>
       <div class="card-body"><div id="dash-map" class="map-container" style="height:300px"></div></div>
     </div>
     <div class="card">
-      <div class="card-head"><span class="dot amber"></span>Infrastructure &amp; Aviation</div>
+      <div class="card-head"><span class="dot amber"></span>Infrastructure &amp; Weather</div>
       <div class="card-body" id="dash-infra"><div class="loading">Loading infrastructure alerts</div></div>
     </div>
     <div class="card">
@@ -73,9 +83,45 @@
     </div>
   </div>
 
+  <div class="page-title" style="font-size:16px;margin-top:24px">Content Pillars</div>
+  <div class="page-sub">Deep-dive into Arizona&#39;s public intelligence landscape</div>
+
+  <div class="portal-grid mb-2">
+    <a href="arizona.html" class="portal-card">
+      <div class="pc-icon">🌵</div>
+      <div class="pc-title">Arizona Watch</div>
+      <div class="pc-desc">Statewide monitoring: weather, fires, border activity, infrastructure status, and breaking developments.</div>
+    </a>
+    <a href="cyber.html" class="portal-card">
+      <div class="pc-icon">🛡️</div>
+      <div class="pc-title">Cybersecurity</div>
+      <div class="pc-desc">CISA advisories, KEV catalog, FBI/DOJ cyber press, DHS notices, and Arizona-specific cyber incidents.</div>
+    </a>
+    <a href="government.html" class="portal-card">
+      <div class="pc-icon">🏛️</div>
+      <div class="pc-title">Government</div>
+      <div class="pc-desc">.gov domain analysis, federal agency tracking, public corruption cases, policy changes, and tribal governance.</div>
+    </a>
+    <a href="defense.html" class="portal-card">
+      <div class="pc-icon">🛩️</div>
+      <div class="pc-title">Defense &amp; Aerospace</div>
+      <div class="pc-desc">Fort Huachuca, Davis-Monthan, Luke AFB, Yuma Proving Ground, classified programs, and the aerospace corridor.</div>
+    </a>
+    <a href="borders.html" class="portal-card">
+      <div class="pc-icon">🚧</div>
+      <div class="pc-title">Border &amp; Public Safety</div>
+      <div class="pc-desc">Tucson &amp; Yuma sectors, surveillance tech, CBP operations, border infrastructure, and public safety alerts.</div>
+    </a>
+    <a href="anomalies.html" class="portal-card">
+      <div class="pc-icon">👽</div>
+      <div class="pc-title">Anomalies</div>
+      <div class="pc-desc">Phoenix Lights, UAP reports, Sedona vortexes, Superstition Mountains, folklore, and the unexplained.</div>
+    </a>
+  </div>
+
   <div class="grid-2 mt-2">
     <div class="card">
-      <div class="card-head"><span class="dot"></span>Daily Brief</div>
+      <div class="card-head"><span class="dot gold"></span>Daily Brief</div>
       <div class="card-body" id="dash-brief"><div class="loading">Loading daily brief</div></div>
     </div>
     <div class="card">
@@ -83,40 +129,46 @@
       <div class="card-body" id="dash-health"><div class="loading">Loading source status</div></div>
     </div>
   </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot violet"></span>Document Vault — Recent Additions</div>
+    <div class="card-body" id="dash-docs"><div class="loading">Loading documents</div></div>
+  </div>
 </div>
+
 <footer class="site-footer">
   <div class="methodology">
-    <strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources
-    for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices,
-    or restricted feeds.
+    <strong>METHODOLOGY:</strong> This wiki aggregates public-interest information from official government sources, FOIA releases,
+    and lawful public records for education and research. Content is tagged with reliability labels. It does not represent classified
+    or non-public information. <a href="methodology.html">Full Methodology &rarr;</a>
   </div>
   <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
 </footer>
 <div class="status-bar">
   <span class="status-dot"></span>
-  <span>FLLC // GOVINT</span>
+  <span>FLLC // PERSONFU</span>
   <span>|</span>
   <span id="status-update">Last update: &mdash;</span>
   <span style="margin-left:auto">Educational &amp; Research Use Only</span>
 </div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/feed-loader.js"></script>
-
 <script src="assets/js/charts.js"></script>
 <script src="assets/js/maps.js"></script>
 <script>
 (function(){
-  // Load cyber advisories for dashboard
+  // Cyber advisories
   FeedLoader.loadJSON('cisa_advisories.json', function(d){
-    FeedLoader.renderAdvisoryTable('dash-cyber', d.items, {limit:10, showTags:true});
+    FeedLoader.renderAdvisoryTable('dash-cyber', d.items, {limit:8, showTags:true});
     FeedLoader.setKPI('kpi-advisories', d.items ? d.items.length : 0);
     if(d.fetched_at) window.setLastUpdate(d.fetched_at);
     // Ticker
     if(d.items && d.items.length){
       var t=document.getElementById('ticker');
       var h='';
-      d.items.slice(0,15).forEach(function(i){
+      d.items.slice(0,12).forEach(function(i){
         h+='<span class="t-time">'+(i.published||'').slice(0,10)+'</span> ';
         h+='<span class="t-src">'+(i.source||i.agency||'')+'</span> ';
         h+='<span>'+i.title+'</span>';
@@ -168,33 +220,65 @@
     el.innerHTML=h;
   });
 
-  // Category chart
-  FeedLoader.loadFile('data/reports/daily_brief.json', function(d){
-    if(d&&d.category_counts) GovCharts.drawBarChart('chart-categories', d.category_counts, {height:220});
+  // Featured Rabbit Hole
+  FeedLoader.loadFile('data/wiki/featured-rabbit-holes.json', function(d){
+    var el=document.getElementById('dash-rabbit');
+    if(!d||!d.rabbit_holes){el.innerHTML='<div class="text-muted">No rabbit holes loaded</div>';return;}
+    var featured=d.rabbit_holes.filter(function(r){return r.featured;});
+    var pick=featured[Math.floor(Math.random()*featured.length)];
+    if(!pick){el.innerHTML='<div class="text-muted">No featured items</div>';return;}
+    var h='<a href="'+pick.page+'" class="rabbit-hole">';
+    h+='<span class="rh-arrow">&rarr;</span>';
+    h+='<div class="rh-title">'+pick.title+'</div>';
+    h+='<div class="rh-desc">'+pick.summary+'</div>';
+    h+='</a>';
+    pick.topics.forEach(function(t){
+      h+='<span class="tag tag-'+t+'" style="margin:2px">'+t+'</span>';
+    });
+    if(pick.reliability){
+      h+=' <span class="rel-badge rel-'+pick.reliability+'">'+pick.reliability+'</span>';
+    }
+    el.innerHTML=h;
   });
 
-  // Map preview
+  // Document Vault preview
+  FeedLoader.loadFile('data/wiki/documents.json', function(d){
+    var el=document.getElementById('dash-docs');
+    if(!d||!d.documents){el.innerHTML='<div class="text-muted">No documents</div>';return;}
+    var h='<div class="portal-grid">';
+    d.documents.slice(0,4).forEach(function(doc){
+      h+='<div class="doc-card">';
+      h+='<div class="doc-title">'+doc.title+'</div>';
+      h+='<div class="doc-meta">'+doc.issuing_body+(doc.date?' &middot; '+doc.date:'')+'</div>';
+      h+='<div class="doc-summary">'+doc.summary+'</div>';
+      h+='<div class="doc-tags">';
+      doc.topics.forEach(function(t){ h+='<span class="tag tag-'+t+'">'+t+'</span> '; });
+      h+='<span class="rel-badge rel-'+doc.reliability+'">'+doc.reliability+'</span>';
+      h+='</div></div>';
+    });
+    h+='</div><p style="margin-top:12px"><a href="documents.html">View all documents &rarr;</a></p>';
+    el.innerHTML=h;
+  });
+
+  // Map - Arizona focused
   setTimeout(function(){
     if(typeof L!=='undefined'&&document.getElementById('dash-map')){
-      var m=GovMaps.initMap('dash-map',{center:[38.9,-98.5],zoom:4});
-      FeedLoader.loadJSON('public_cameras.json',function(d){
-        if(!d||!d.length)return;
-        d.forEach(function(cam){
-          if(cam.lat&&cam.lon){
-            GovMaps.addMarkers(m,[{lat:cam.lat,lon:cam.lon,color:'#00ccff',
-              popup:'<b>'+cam.camera_name+'</b><br>'+cam.agency+' ('+cam.state+')'}]);
-          }
+      var m=GovMaps.initMap('dash-map',{center:[33.5,-111.9],zoom:7});
+      FeedLoader.loadFile('data/wiki/places.json',function(d){
+        if(!d||!d.places)return;
+        var colors={military:'#6688ff',border:'#ff9944',infrastructure:'#00cc66',anomaly:'#d400d4',aviation:'#00d4ff'};
+        d.places.forEach(function(p){
+          GovMaps.addMarkers(m,[{lat:p.lat,lon:p.lon,color:colors[p.type]||'#d4af37',
+            popup:'<b>'+p.name+'</b><br><span style="font-size:11px;color:#888">'+p.type.toUpperCase()+'</span><br>'+p.description.slice(0,100)+'...'}]);
         });
       });
     }
   },500);
 
-  // Cameras KPI
+  // KPIs
   FeedLoader.loadJSON('public_cameras.json', function(d){
     FeedLoader.setKPI('kpi-cameras', d ? d.length : 0);
   });
-
-  // Update KPI
   FeedLoader.loadJSON('cisa_advisories.json', function(d){
     if(d&&d.fetched_at) FeedLoader.setKPI('kpi-update', d.fetched_at.slice(0,10));
   });

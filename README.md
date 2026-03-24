@@ -1,34 +1,107 @@
-# .gov data
-<img width="70" alt="favicon" src="https://github.com/cisagov/dotgov-data/assets/603901/7cf1f2e8-ed6d-4f3d-a5fd-813a1ec2b566">
+# PERSONFU // Arizona Public Intel Wiki
 
+> An open-source OSINT dashboard and research wiki focused on Arizona government, defense, infrastructure, border security, cyber threats, and documented anomalies — built from public federal data feeds.
 
+**Live site:** [personfu.github.io/GovINT](https://personfu.github.io/GovINT/)
 
-The [.gov top-level domain](https://get.gov) exists so that the online services of U.S.-based government organizations are easy to identify on the internet. In support of that goal, the .gov registry publishes information about our domains.
+---
 
-This repository contains the official, full list of registered domains in the .gov zone. The U.S. Government's executive, legislative, and judicial branches are represented, as are many state, territory, tribal, city, and county governments in the United States.
+## What This Is
 
-Three files are updated daily (when there is activity):
-* [gov.txt](https://github.com/cisagov/dotgov-data/blob/main/gov.txt) – a copy of the .gov zone file
-* [current-full.csv](https://github.com/cisagov/dotgov-data/blob/main/current-full.csv) – a CSV of all domains in the zone, including federal domains
-* [current-federal.csv](https://github.com/cisagov/dotgov-data/blob/main/current-federal.csv) – a CSV of only federal domains in the zone
+A static website that aggregates publicly available U.S. government data into a browsable, cross-referenced intelligence wiki with a cyberpunk desert aesthetic. All data comes from official `.gov` sources, FOIA-released documents, and verified public records.
 
-current-full.csv and current-federal.csv contain the same registered domains as the zone file, but instead of name server records they detail the registrant organization. They include all domains in the "Ready" and "On hold" states of our [registrar](https://github.com/cisagov/manage.get.gov/). 
+**This is not** a news site, conspiracy platform, or intelligence agency. It is an educational OSINT research tool.
 
-Each file lists the "second-level domains" (e.g., get.gov) that are registered in the .gov zone; they do not list every _hostname_ (e.g., manage.get.gov) in use in the .gov namespace. This repo hosts several other files that include .gov hostnames, though they are not complete.
+## Content Pillars
 
-Note that not all registered domains offer an online service (e.g., a website, an email server) at the domain. 
+| Pillar | Description |
+|--------|-------------|
+| **Cyber** | CISA advisories, KEV catalog, FBI/DOJ cyber press, DHS news |
+| **Government** | 15,000+ `.gov` domains, agency profiles, CRS reports |
+| **Defense** | Fort Huachuca, Davis-Monthan AFB, Luke AFB, Yuma Proving Ground |
+| **Infrastructure** | Weather alerts, transportation, Palo Verde, CAP canal, dams |
+| **Borders** | CBP technology corridor, Tucson/Yuma sectors, public cameras |
+| **Anomalies** | Phoenix Lights, Sedona, documented UAP events with reliability labels |
+| **Documents** | Declassified materials, CRS reports, FOIA releases |
 
-## Spot an issue?
+## Reliability System
 
-**This repo doesn't accept pull requests on the zone file or current-{full,federal}.csv**. If you manage a domain in these files and you notice that metadata about it is incorrect, log in to the [.gov registrar](https://manage.get.gov) to correct it.
+Every claim carries a reliability badge (1–10 scale):
 
-* If you use any of this data or just have a question, let us know by [opening an issue](https://github.com/cisagov/dotgov-data/issues).
+- **Verified** (10) — Official government source, directly confirmed
+- **Official** (9) — Published by a government agency
+- **Confirmed** (8) — Multiple credible sources agree
+- **Credible** (7) — Reputable source, not independently confirmed
+- **Probable** (6) — Likely true based on available evidence
+- **Possible** (5) — Plausible but unconfirmed
+- **Speculative** (4) — Based on limited or indirect evidence
+- **Disputed** (3) — Conflicting accounts exist
+- **Folklore** (2) — Community tradition, not evidence-based
+- **Unresolved** (1) — Insufficient evidence to assess
 
-* Find a **security or privacy issue** on one of these domains? Review our [security policy](https://github.com/cisagov/dotgov-data/security/policy).
+## Architecture
 
-## Unofficial uses
+```
+├── index.html              # Mission Control homepage
+├── *.html                  # Portal pages (cyber, defense, borders, etc.)
+├── content/                # Deep-dive dossier pages
+├── assets/
+│   ├── css/fllc-govint.css # Cosmic desert cyberpunk theme
+│   └── js/                 # Vanilla JS modules (no frameworks)
+├── config/sources.yaml     # RSS feed and API source definitions
+├── data/
+│   ├── latest/             # Auto-updated JSON from daily pipeline
+│   ├── wiki/               # Static reference data (agencies, places, timelines)
+│   └── archive/            # Historical snapshots
+├── scripts/                # Python data collection pipeline
+└── .github/workflows/      # Daily automated collection (GitHub Actions)
+```
 
-* [Accept the Risk and Continue: Measuring the Long Tail of Government https Adoption](https://sudheesh.info/papers/imc20.pdf). Sudheesh Singanamalla, Esther Han Beol Jang, Richard Anderson, Tadayoshi Kohno, and Kurtis Heimerl. 2020. In Proceedings of the ACM Internet Measurement Conference (IMC '20). Association for Computing Machinery, New York, NY, USA, 577–597. [DOI](https://doi.org/10.1145/3419394.3423645)
-* Lauren Ancona made a [geocoded map of .gov domains](http://laurenancona.com/maps/gov_domains.html):
+## Data Pipeline
 
-[![gov_domains](https://cloud.githubusercontent.com/assets/2152151/5627069/ba4185e2-9561-11e4-873a-54d9f480ec3e.jpg)](http://laurenancona.com/maps/gov_domains.html)
+A GitHub Actions workflow runs daily at 11:17 UTC and collects from:
+
+- **CISA** — Advisories and Known Exploited Vulnerabilities catalog
+- **FBI** — Cyber division press releases
+- **DOJ** — Cybercrime prosecution announcements
+- **DHS** — News and operational updates
+- **FAA/NWS** — Aviation alerts, weather warnings
+- **GSA** — `.gov` domain registry (15,000+ domains)
+- **State DOTs** — Public traffic camera feeds
+
+All data is fetched from official government RSS feeds and APIs. No scraping. No private data.
+
+## Local Development
+
+```bash
+# Install Python dependencies
+pip install -r requirements.txt
+
+# Run individual collectors
+python scripts/fetch_cisa.py
+python scripts/fetch_fbi.py
+python scripts/build_daily_brief.py
+
+# Serve locally
+python -m http.server 8000
+```
+
+## Security
+
+- All external data is HTML-escaped before rendering to prevent XSS
+- External resources (Leaflet) loaded with `crossorigin="anonymous"`
+- No cookies, no tracking, no analytics, no user data collection
+- All links to external sites use `rel="noopener"`
+- Content Security Policy headers recommended for production deployment
+
+See [SECURITY.md](SECURITY.md) for vulnerability reporting.
+
+## Contributing
+
+Contributions welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+
+## License
+
+This project is released under [CC0 1.0 Universal](LICENSE) — public domain dedication. You can copy, modify, and distribute this work without asking permission.
+
+Data sourced from U.S. government public records is not subject to copyright under 17 U.S.C. § 105.

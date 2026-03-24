@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Border & Public Safety — PERSONFU // Arizona Public Intel Wiki</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <h1><span class="accent">PERSONFU</span><span class="sep">//</span>ARIZONA PUBLIC INTEL WIKI</h1>
+  </div>
+  <div class="header-meta">
+    <span class="site-tagline">FLLC Intelligence Research &amp; Archive</span>
+    <span class="header-clock" id="header-clock"></span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="arizona.html" class="nav-link">Arizona Watch</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="government.html" class="nav-link">Government</a>
+  <a href="defense.html" class="nav-link">Defense</a>
+  <a href="borders.html" class="nav-link active">Border &amp; Safety</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="anomalies.html" class="nav-link">Anomalies</a>
+  <a href="timelines.html" class="nav-link">Timelines</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="documents.html" class="nav-link">Documents</a>
+  <a href="methodology.html" class="nav-link">Methodology</a>
+</nav>
+<div class="page-wrap">
+  <div class="section-hero">
+    <h2>Border &amp; Public Safety</h2>
+    <p>Arizona shares 372 miles of international border with Mexico. The Tucson and Yuma sectors are among the most active in the nation. This section tracks surveillance technology, CBP operations, and public safety infrastructure.</p>
+    <span class="rel-badge rel-archived">ARCHIVED REPORTING</span>
+  </div>
+
+  <div class="grid-3 mb-2">
+    <div class="kpi"><div class="kpi-val">372</div><div class="kpi-label">Miles of Border</div></div>
+    <div class="kpi"><div class="kpi-val blue">2</div><div class="kpi-label">CBP Sectors</div></div>
+    <div class="kpi"><div class="kpi-val magenta">44</div><div class="kpi-label">AZ511 Cameras</div></div>
+  </div>
+
+  <div class="portal-grid mb-2">
+    <a href="content/border-tech.html" class="portal-card">
+      <div class="pc-icon">📡</div>
+      <div class="pc-title">Border Technology Corridor</div>
+      <div class="pc-desc">Autonomous surveillance towers, AI-powered cameras, ground sensors, and drone patrols. The AZ border as a surveillance technology testbed.</div>
+      <div class="pc-count"><span class="rel-badge rel-archived">archived</span></div>
+    </a>
+    <div class="portal-card">
+      <div class="pc-icon">🏜️</div>
+      <div class="pc-title">Tucson Sector</div>
+      <div class="pc-desc">262 miles of boundary. Historically the busiest sector for encounters. Remote desert terrain, tribal lands, and urban corridors.</div>
+      <div class="pc-count">Dossier coming</div>
+    </div>
+    <div class="portal-card">
+      <div class="pc-icon">🌊</div>
+      <div class="pc-title">Yuma Sector</div>
+      <div class="pc-desc">126 miles of boundary along the Colorado River. 300%+ increase in encounters 2021-2023. Agricultural corridor and military testing grounds.</div>
+      <div class="pc-count">Dossier coming</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><span class="dot red"></span>DHS / CBP Notices</div>
+      <div class="card-body" id="border-dhs"><div class="loading">Loading DHS data</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot blue"></span>Live Cameras — AZ Highways</div>
+      <div class="card-body">
+        <p>44 live AZ511 camera feeds monitoring Arizona freeways and border-adjacent corridors.</p>
+        <p><a href="cameras.html">View live camera grid &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="methodology">
+    <strong>METHODOLOGY:</strong> This wiki aggregates public-interest information from official government sources, FOIA releases,
+    and lawful public records for education and research. Content is tagged with reliability labels.
+    <a href="methodology.html">Full Methodology &rarr;</a>
+  </div>
+  <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>FLLC // PERSONFU</span>
+  <span>|</span>
+  <span id="status-update">Last update: &mdash;</span>
+  <span style="margin-left:auto">Educational &amp; Research Use Only</span>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+<script>
+FeedLoader.loadJSON('dhs_news.json', function(d){
+  FeedLoader.renderAdvisoryTable('border-dhs', d.items, {limit:10, showTags:true});
+});
+</script>
+</body>
+</html>

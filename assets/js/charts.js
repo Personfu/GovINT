@@ -1,4 +1,4 @@
-/* FLLC // GOVINT — Charts Module (Canvas-based, no dependencies) */
+/* FLLC // PERSONFU — Charts Module (Canvas-based, no dependencies) */
 (function () {
   'use strict';
 

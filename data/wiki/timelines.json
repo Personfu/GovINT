@@ -1,0 +1,268 @@
+{
+  "timelines": [
+    {
+      "events": [
+        {
+          "body": "US Army establishes Camp Huachuca during the Apache Wars. Becomes permanent fort in 1882.",
+          "date": "1877",
+          "reliability": "verified",
+          "title": "Fort Huachuca Established",
+          "topics": [
+            "defense",
+            "history"
+          ]
+        },
+        {
+          "body": "Named after Medal of Honor recipient Frank Luke Jr. Becomes primary fighter pilot training base.",
+          "date": "1941",
+          "reliability": "verified",
+          "title": "Luke Field Activated",
+          "topics": [
+            "defense",
+            "aviation"
+          ]
+        },
+        {
+          "body": "Activated for WWII bomber training. B-24 and B-29 crews trained here.",
+          "date": "1941",
+          "reliability": "verified",
+          "title": "Davis-Monthan Becomes Army Air Field",
+          "topics": [
+            "defense",
+            "aviation"
+          ]
+        },
+        {
+          "body": "First surplus military aircraft stored in the Arizona desert. Low humidity prevents corrosion.",
+          "date": "1946",
+          "reliability": "verified",
+          "title": "Aircraft Storage Begins at D-M",
+          "topics": [
+            "defense",
+            "aviation"
+          ]
+        },
+        {
+          "body": "U.S. Army Electronic Proving Ground established. Fort becomes center for military intelligence.",
+          "date": "1954",
+          "reliability": "verified",
+          "title": "Fort Huachuca Army Intelligence",
+          "topics": [
+            "defense",
+            "classified"
+          ]
+        },
+        {
+          "body": "Aerospace Maintenance & Regeneration Group established at Davis-Monthan. Today holds 4,400+ aircraft.",
+          "date": "1967",
+          "reliability": "verified",
+          "title": "AMARG Formalized",
+          "topics": [
+            "defense",
+            "aviation"
+          ]
+        },
+        {
+          "body": "US Army Intelligence Center and School formally established.",
+          "date": "1971",
+          "reliability": "verified",
+          "title": "Fort Huachuca Intelligence Center",
+          "topics": [
+            "defense",
+            "classified",
+            "cyber"
+          ]
+        },
+        {
+          "body": "US Army Network Enterprise Technology Command headquarters at Fort Huachuca.",
+          "date": "2002",
+          "reliability": "verified",
+          "title": "NETCOM Activated",
+          "topics": [
+            "defense",
+            "cyber"
+          ]
+        },
+        {
+          "body": "First F-35A Lightning II arrives at Luke. Base becomes primary F-35 training installation.",
+          "date": "2014",
+          "reliability": "verified",
+          "title": "Luke AFB Gets F-35",
+          "topics": [
+            "defense",
+            "aviation"
+          ]
+        }
+      ],
+      "id": "az-military",
+      "title": "Arizona Military History"
+    },
+    {
+      "events": [
+        {
+          "body": "Following the famous Washington state sighting, multiple Arizona reports emerge in July 1947.",
+          "date": "1947-07",
+          "reliability": "media",
+          "title": "Kenneth Arnold Sighting Aftermath",
+          "topics": [
+            "anomaly",
+            "ufo"
+          ]
+        },
+        {
+          "body": "Alleged UFO retrieval near Kingman, AZ. Arthur Stansel testimony. No official confirmation.",
+          "date": "1953",
+          "reliability": "disputed",
+          "title": "Kingman UFO Crash Claim",
+          "topics": [
+            "anomaly",
+            "ufo"
+          ]
+        },
+        {
+          "body": "Logger Travis Walton claims 5-day abduction near Snowflake, AZ. Coworker witnesses, polygraph tests. Became Fire in the Sky.",
+          "date": "1975-11",
+          "reliability": "witness",
+          "title": "Travis Walton Incident",
+          "topics": [
+            "anomaly",
+            "ufo"
+          ]
+        },
+        {
+          "body": "Mass sighting of V-shaped formation from Prescott to Tucson. Thousands of witnesses. Two distinct events: formation lights and flares.",
+          "date": "1997-03-13",
+          "reliability": "witness",
+          "title": "The Phoenix Lights",
+          "topics": [
+            "anomaly",
+            "ufo",
+            "defense"
+          ]
+        },
+        {
+          "body": "Gov. Fife Symington holds mocking press conference with aide in alien costume. Later reverses, says he saw something unexplainable.",
+          "date": "1997-06",
+          "reliability": "verified",
+          "title": "Governor Symington Press Conference",
+          "topics": [
+            "anomaly",
+            "ufo",
+            "policy"
+          ]
+        },
+        {
+          "body": "New lights reported over Phoenix on 10th anniversary. Later attributed to flares dropped by military.",
+          "date": "2007-02",
+          "reliability": "media",
+          "title": "Phoenix Lights Anniversary Sighting",
+          "topics": [
+            "anomaly",
+            "ufo"
+          ]
+        },
+        {
+          "body": "DoD officially releases three Navy UAP videos. Renewed interest in Arizona military range sightings.",
+          "date": "2020-04",
+          "reliability": "verified",
+          "title": "Pentagon UAP Video Release",
+          "topics": [
+            "anomaly",
+            "ufo",
+            "defense"
+          ]
+        },
+        {
+          "body": "David Grusch testimony mentions retrieval programs. Arizona military facilities referenced in broader UAP discourse.",
+          "date": "2023-07",
+          "reliability": "witness",
+          "title": "Congressional UAP Hearings",
+          "topics": [
+            "anomaly",
+            "ufo",
+            "classified"
+          ]
+        }
+      ],
+      "id": "az-uap",
+      "title": "Arizona UAP / Anomaly Timeline"
+    },
+    {
+      "events": [
+        {
+          "body": "Seven states divide Colorado River water. Arizona initially refuses to sign, doesn't ratify until 1944.",
+          "date": "1922",
+          "reliability": "verified",
+          "title": "Colorado River Compact",
+          "topics": [
+            "water",
+            "policy"
+          ]
+        },
+        {
+          "body": "Supreme Court rules in Arizona's favor, establishing water allocation rights.",
+          "date": "1963",
+          "reliability": "verified",
+          "title": "Arizona v. California",
+          "topics": [
+            "water",
+            "policy"
+          ]
+        },
+        {
+          "body": "Colorado River Basin Project Act authorizes the Central Arizona Project — a 336-mile canal.",
+          "date": "1968",
+          "reliability": "verified",
+          "title": "CAP Authorized",
+          "topics": [
+            "water",
+            "infra"
+          ]
+        },
+        {
+          "body": "First water flows through the CAP canal system to Phoenix metro area.",
+          "date": "1985",
+          "reliability": "verified",
+          "title": "CAP Begins Deliveries",
+          "topics": [
+            "water",
+            "infra"
+          ]
+        },
+        {
+          "body": "First-ever shortage declaration on the Colorado River. Arizona forced to cut water use by 512,000 acre-feet.",
+          "date": "2021",
+          "reliability": "verified",
+          "title": "Tier 1 Shortage Declared",
+          "topics": [
+            "water",
+            "policy"
+          ]
+        },
+        {
+          "body": "Additional reductions. Lake Mead at historic lows. Arizona agriculture faces existential pressure.",
+          "date": "2023",
+          "reliability": "verified",
+          "title": "Tier 2 Cuts",
+          "topics": [
+            "water",
+            "policy",
+            "infra"
+          ]
+        },
+        {
+          "body": "States begin negotiating new Colorado River operating guidelines to replace 2007 interim rules.",
+          "date": "2024",
+          "reliability": "verified",
+          "title": "Post-2026 Negotiations Begin",
+          "topics": [
+            "water",
+            "policy"
+          ]
+        }
+      ],
+      "id": "az-water",
+      "title": "Arizona Water Crisis Timeline"
+    }
+  ]
+}

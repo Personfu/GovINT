@@ -1,8 +1,21 @@
-/* FLLC // GOVINT — Feed Loader
+/* FLLC // PERSONFU — Feed Loader
    Loads JSON data files and renders them into tables/cards */
 (function () {
   'use strict';
   var DATA = 'data/latest/';
+
+  /* ── HTML entity escaping to prevent XSS from feed data ── */
+  var ESC_MAP = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+  function esc(s) {
+    return s == null ? '' : String(s).replace(/[&<>"']/g, function (c) { return ESC_MAP[c]; });
+  }
+  function escUrl(u) {
+    if (!u) return '#';
+    var s = String(u).trim();
+    if (/^https?:\/\//i.test(s)) return esc(s);
+    if (s.charAt(0) === '/') return esc(s);
+    return '#';
+  }
 
   function loadJSON(file, cb) {
     fetch(DATA + file)
@@ -35,17 +48,17 @@
     items.slice(0, limit).forEach(function (item) {
       h += '<tr>';
       if (showSource) {
-        var src = (item.source || item.agency || '').toUpperCase();
+        var src = esc(item.source || item.agency || '').toUpperCase();
         var cls = src.toLowerCase().replace(/[^a-z]/g, '');
         h += '<td><span class="src-badge ' + cls + '">' + src + '</span></td>';
       }
-      h += '<td><a href="' + (item.url || item.link || '#') + '" target="_blank" rel="noopener">' + (item.title || 'Untitled') + '</a></td>';
-      h += '<td class="mono text-muted" style="white-space:nowrap">' + (item.published || item.date || '').slice(0, 10) + '</td>';
+      h += '<td><a href="' + escUrl(item.url || item.link) + '" target="_blank" rel="noopener">' + esc(item.title || 'Untitled') + '</a></td>';
+      h += '<td class="mono text-muted" style="white-space:nowrap">' + esc((item.published || item.date || '').slice(0, 10)) + '</td>';
       if (opts.showTags && item.tags) {
         h += '<td>';
         item.tags.forEach(function (t) {
           var cls = mapTagClass(t);
-          h += '<span class="tag ' + cls + '">' + t + '</span> ';
+          h += '<span class="tag ' + cls + '">' + esc(t) + '</span> ';
         });
         h += '</td>';
       }
@@ -79,10 +92,11 @@
     if (!items || !items.length) { el.innerHTML = '<div class="loading">No domain data</div>'; return; }
     var h = '<table class="data-tbl"><thead><tr><th>Domain</th><th>Organization</th><th>State</th><th>Type</th></tr></thead><tbody>';
     items.slice(0, limit || 200).forEach(function (d) {
-      h += '<tr><td><a href="https://' + d.domain + '" target="_blank" rel="noopener">' + d.domain + '</a></td>';
-      h += '<td>' + (d.organization_name || '') + '</td>';
-      h += '<td>' + (d.state || '') + '</td>';
-      h += '<td>' + (d.domain_type || '') + '</td></tr>';
+      var safeDomain = esc(d.domain);
+      h += '<tr><td><a href="https://' + safeDomain + '" target="_blank" rel="noopener">' + safeDomain + '</a></td>';
+      h += '<td>' + esc(d.organization_name) + '</td>';
+      h += '<td>' + esc(d.state) + '</td>';
+      h += '<td>' + esc(d.domain_type) + '</td></tr>';
     });
     h += '</tbody></table>';
     el.innerHTML = h;
@@ -144,9 +158,9 @@
       var info = document.createElement('div');
       info.className = 'cam-info';
       info.innerHTML =
-        '<div class="cam-name">' + (cam.title || cam.camera_name || '') + '</div>' +
-        '<div class="cam-agency">' + (cam.agency || '') + ' &middot; ' + (cam.state || '') + '</div>' +
-        '<div class="cam-link"><a href="' + (cam.page_url || '#') + '" target="_blank" rel="noopener">View on official page &rarr;</a></div>';
+        '<div class="cam-name">' + esc(cam.title || cam.camera_name) + '</div>' +
+        '<div class="cam-agency">' + esc(cam.agency) + ' &middot; ' + esc(cam.state) + '</div>' +
+        '<div class="cam-link"><a href="' + escUrl(cam.page_url) + '" target="_blank" rel="noopener">View on official page &rarr;</a></div>';
       card.appendChild(info);
       el.appendChild(card);
     });

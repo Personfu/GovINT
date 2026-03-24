@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Defense & Aerospace — PERSONFU // Arizona Public Intel Wiki</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <h1><span class="accent">PERSONFU</span><span class="sep">//</span>ARIZONA PUBLIC INTEL WIKI</h1>
+  </div>
+  <div class="header-meta">
+    <span class="site-tagline">FLLC Intelligence Research &amp; Archive</span>
+    <span class="header-clock" id="header-clock"></span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="arizona.html" class="nav-link">Arizona Watch</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="government.html" class="nav-link">Government</a>
+  <a href="defense.html" class="nav-link active">Defense</a>
+  <a href="borders.html" class="nav-link">Border &amp; Safety</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+  <a href="anomalies.html" class="nav-link">Anomalies</a>
+  <a href="timelines.html" class="nav-link">Timelines</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="documents.html" class="nav-link">Documents</a>
+  <a href="methodology.html" class="nav-link">Methodology</a>
+</nav>
+<div class="page-wrap">
+  <div class="section-hero">
+    <h2>Defense &amp; Aerospace</h2>
+    <p>Arizona's military-industrial landscape: five major installations, restricted airspace covering millions of acres, the world's largest aircraft boneyard, and the classified programs that operate in the desert.</p>
+    <span class="rel-badge rel-verified">VERIFIED</span>
+    <span class="stamp stamp-archive" style="margin-left:12px">ARCHIVE</span>
+  </div>
+
+  <div class="portal-grid mb-2">
+    <a href="content/fort-huachuca.html" class="portal-card">
+      <div class="pc-icon">🏰</div>
+      <div class="pc-title">Fort Huachuca</div>
+      <div class="pc-desc">America's intelligence factory: Army Intelligence Center, NETCOM, and 147 years of frontier-to-cyber warfare evolution.</div>
+      <div class="pc-count"><span class="rel-badge rel-verified">verified</span></div>
+    </a>
+    <a href="content/davis-monthan.html" class="portal-card">
+      <div class="pc-icon">✈️</div>
+      <div class="pc-title">Davis-Monthan &amp; The Boneyard</div>
+      <div class="pc-desc">4,400+ aircraft baking in the desert sun. AMARG, the 355th Wing, and why Tucson became the final resting place for military aviation.</div>
+      <div class="pc-count"><span class="rel-badge rel-verified">verified</span></div>
+    </a>
+    <div class="portal-card">
+      <div class="pc-icon">⚡</div>
+      <div class="pc-title">Luke AFB &amp; F-35 Training</div>
+      <div class="pc-desc">The largest fighter pilot training base in the western world, now transitioning to 5th-gen stealth operations.</div>
+      <div class="pc-count"><span class="rel-badge rel-verified">verified</span> &middot; Dossier coming</div>
+    </div>
+    <div class="portal-card">
+      <div class="pc-icon">🎯</div>
+      <div class="pc-title">Yuma Proving Ground</div>
+      <div class="pc-desc">1,300+ square miles of weapons testing. Autonomous systems, directed energy, and next-gen munitions in the desert.</div>
+      <div class="pc-count"><span class="rel-badge rel-verified">verified</span> &middot; Dossier coming</div>
+    </div>
+    <div class="portal-card">
+      <div class="pc-icon">🔒</div>
+      <div class="pc-title">Barry Goldwater Range</div>
+      <div class="pc-desc">2.7 million acres of restricted military airspace. The largest USAF air-to-ground gunnery range in the world.</div>
+      <div class="pc-count"><span class="rel-badge rel-verified">verified</span> &middot; Dossier coming</div>
+    </div>
+    <div class="portal-card">
+      <div class="pc-icon">📡</div>
+      <div class="pc-title">Classified Programs</div>
+      <div class="pc-desc">What we know (and don't know) about black programs, SIGINT facilities, and classified operations in Arizona.</div>
+      <div class="pc-count"><span class="rel-badge rel-declassified">declassified</span> &middot; Dossier coming</div>
+    </div>
+  </div>
+
+  <div class="card mb-2">
+    <div class="card-head"><span class="dot gold"></span>Arizona Military Timeline</div>
+    <div class="card-body" id="def-timeline"><div class="loading">Loading timeline</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="dot violet"></span>Related Documents</div>
+    <div class="card-body" id="def-docs"><div class="loading">Loading documents</div></div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="methodology">
+    <strong>METHODOLOGY:</strong> This wiki aggregates public-interest information from official government sources, FOIA releases,
+    and lawful public records for education and research. Content is tagged with reliability labels.
+    <a href="methodology.html">Full Methodology &rarr;</a>
+  </div>
+  <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>FLLC // PERSONFU</span>
+  <span>|</span>
+  <span id="status-update">Last update: &mdash;</span>
+  <span style="margin-left:auto">Educational &amp; Research Use Only</span>
+</div>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+<script>
+FeedLoader.loadFile('data/wiki/timelines.json', function(d){
+  var el=document.getElementById('def-timeline');
+  if(!d||!d.timelines){el.innerHTML='No data';return;}
+  var tl=d.timelines.find(function(t){return t.id==='az-military';});
+  if(!tl){el.innerHTML='No timeline';return;}
+  var h='<div class="timeline">';
+  tl.events.forEach(function(e){
+    h+='<div class="timeline-event"><div class="tl-date">'+e.date+'</div>';
+    h+='<div class="tl-title">'+e.title+'</div>';
+    h+='<div class="tl-body">'+e.body+'</div></div>';
+  });
+  h+='</div>';
+  el.innerHTML=h;
+});
+FeedLoader.loadFile('data/wiki/documents.json', function(d){
+  var el=document.getElementById('def-docs');
+  if(!d||!d.documents){el.innerHTML='No data';return;}
+  var docs=d.documents.filter(function(doc){return doc.topics.indexOf('defense')!==-1;});
+  var h='';
+  docs.forEach(function(doc){
+    h+='<div class="doc-card mb-1"><div class="doc-title">'+doc.title+'</div>';
+    h+='<div class="doc-meta">'+doc.issuing_body+(doc.date?' &middot; '+doc.date:'')+'</div>';
+    h+='<div class="doc-summary">'+doc.summary+'</div>';
+    h+='<div class="doc-tags">';
+    doc.topics.forEach(function(t){h+='<span class="tag tag-'+t+'">'+t+'</span> ';});
+    h+='<span class="rel-badge rel-'+doc.reliability+'">'+doc.reliability+'</span>';
+    h+='</div></div>';
+  });
+  el.innerHTML=h||'<div class="text-muted">No defense documents found</div>';
+});
+</script>
+</body>
+</html>

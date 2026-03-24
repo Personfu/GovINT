@@ -1,4 +1,4 @@
-/* FLLC // GOVINT — Main Application */
+/* FLLC // PERSONFU — Arizona Public Intel Wiki — Main Application */
 (function () {
   'use strict';
 
@@ -11,10 +11,14 @@
   tickClock();
 
   /* ── Mark active nav link ── */
-  var page = location.pathname.split('/').pop() || 'index.html';
+  var path = location.pathname;
+  var page = path.split('/').pop() || 'index.html';
+  // Handle content/ subdirectory pages - strip ../  prefix for matching
+  var inContent = path.indexOf('/content/') !== -1;
   document.querySelectorAll('.nav-link').forEach(function (a) {
     var href = a.getAttribute('href');
-    if (href === page) a.classList.add('active');
+    var hrefPage = href.replace('../', '');
+    if (hrefPage === page || (href === page)) a.classList.add('active');
   });
 
   /* ── Status bar last-update ── */
