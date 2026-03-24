@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>.gov Domain Watch — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link active">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">GOVERNMENT DOMAIN WATCH</div>
+  <div class="page-sub">.gov domain intelligence &middot; DNS / MX metadata &middot; Additions &amp; removals</div>
+
+  <div class="grid-4 mb-2">
+    <div class="kpi"><div class="kpi-val" id="kpi-total">—</div><div class="kpi-label">Total .gov Domains</div></div>
+    <div class="kpi"><div class="kpi-val blue" id="kpi-federal">—</div><div class="kpi-label">Federal</div></div>
+    <div class="kpi"><div class="kpi-val green" id="kpi-nonfed">—</div><div class="kpi-label">Non-Federal</div></div>
+    <div class="kpi"><div class="kpi-val amber" id="kpi-states">—</div><div class="kpi-label">States</div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><span class="dot blue"></span>Domain Summary by Type</div>
+      <div class="card-body"><canvas id="chart-domtype"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>State Distribution</div>
+      <div class="card-body"><canvas id="chart-domstate"></canvas></div>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot"></span>Daily Random Domain Sample (200)</div>
+    <div class="card-body" id="domain-sample"><div class="loading">Loading domain sample</div></div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script src="assets/js/charts.js"></script>
+<script>
+FeedLoader.loadJSON('gov_domains_summary.json', function(d){
+  if(!d)return;
+  FeedLoader.setKPI('kpi-total',d.total||0);
+  FeedLoader.setKPI('kpi-federal',d.federal||0);
+  FeedLoader.setKPI('kpi-nonfed',d.non_federal||0);
+  FeedLoader.setKPI('kpi-states',d.states_count||0);
+  if(d.type_counts) GovCharts.drawBarChart('chart-domtype',d.type_counts,{height:220});
+  if(d.state_counts) GovCharts.drawBarChart('chart-domstate',d.state_counts,{height:220});
+});
+FeedLoader.loadJSON('gov_domains_summary.json', function(d){
+  if(d&&d.sample) FeedLoader.renderDomainTable('domain-sample',d.sample,200);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link active">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">INTELLIGENCE REPORTS</div>
+  <div class="page-sub">Daily &amp; weekly briefs &middot; Source reports &middot; Research references</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><span class="dot red"></span>Daily Brief</div>
+      <div class="card-body" id="daily-brief"><div class="loading">Loading daily brief</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Source Summary</div>
+      <div class="card-body" id="source-summary"><div class="loading">Loading source counts</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Category Summary</div>
+      <div class="card-body"><canvas id="chart-cats"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Top 10 Notable Items</div>
+      <div class="card-body" id="notable"><div class="loading">Loading notable items</div></div>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot red"></span>Public Booking Records</div>
+    <div class="card-body">
+      <p class="text-muted mb-1">Live booking records from official county jail / sheriff public sources.</p>
+      <ul class="link-list">
+        <li><a href="https://recentlybooked.com/az/maricopa" target="_blank" rel="noopener">Maricopa County, AZ — Recent Bookings</a></li>
+        <li><a href="https://recentlybooked.com/az/pinal" target="_blank" rel="noopener">Pinal County, AZ</a></li>
+        <li><a href="https://recentlybooked.com/az/mohave" target="_blank" rel="noopener">Mohave County, AZ</a></li>
+        <li><a href="https://recentlybooked.com/az/yavapai" target="_blank" rel="noopener">Yavapai County, AZ</a></li>
+        <li><a href="https://recentlybooked.com/az/cochise" target="_blank" rel="noopener">Cochise County, AZ</a></li>
+        <li><a href="https://recentlybooked.com/az/yuma" target="_blank" rel="noopener">Yuma County, AZ</a></li>
+        <li><a href="https://recentlybooked.com/az" target="_blank" rel="noopener">All Arizona Counties</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot"></span>Intel Reports &amp; PDFs</div>
+    <div class="card-body">
+      <ul class="link-list">
+        <li><a href="Iran" target="_blank" rel="noopener">Iran Cyber Threat Report</a><span class="meta">PDF</span></li>
+        <li><a href="Government_Report.pdf" target="_blank" rel="noopener">Government Report</a><span class="meta">PDF</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script src="assets/js/charts.js"></script>
+<script>
+FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+  if(!d){return;}
+  var el=document.getElementById('daily-brief');
+  var h='<p class="mono text-accent mb-1">'+(d.date||'')+'</p>';
+  h+='<p class="text-muted mb-1">Total items: '+(d.total_items||0)+'</p>';
+  if(d.summary) h+='<p>'+d.summary+'</p>';
+  el.innerHTML=h;
+
+  var el2=document.getElementById('source-summary');
+  if(d.source_counts){
+    var h2='<table class="data-tbl"><tr><th>Source</th><th>Count</th></tr>';
+    Object.keys(d.source_counts).forEach(function(s){h2+='<tr><td>'+s+'</td><td class="mono">'+d.source_counts[s]+'</td></tr>'});
+    h2+='</table>';el2.innerHTML=h2;
+  }
+  if(d.category_counts) GovCharts.drawBarChart('chart-cats',d.category_counts,{height:220});
+
+  var el3=document.getElementById('notable');
+  if(d.notable&&d.notable.length){
+    var h3='<ul class="link-list">';
+    d.notable.forEach(function(n){h3+='<li><a href="'+(n.url||'#')+'" target="_blank" rel="noopener">'+n.title+'</a><span class="meta">'+(n.source||'')+'</span></li>'});
+    h3+='</ul>';el3.innerHTML=h3;
+  }
+});
+</script>
+</body>
+</html>

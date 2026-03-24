@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviation & Weather — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link active">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">AVIATION &amp; WEATHER WATCH</div>
+  <div class="page-sub">FAA / NTSB notices &middot; Weather overlays &middot; Airspace alerts</div>
+
+  <div class="grid-2">
+    <div class="card span-2">
+      <div class="card-head"><span class="dot blue"></span>FAA / NTSB Notices</div>
+      <div class="card-body" id="aviation-feed"><div class="loading">Loading aviation alerts</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot amber"></span>Weather Alerts</div>
+      <div class="card-body" id="avia-weather"><div class="loading">Loading weather data</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Live Flight Tracking — Arizona</div>
+      <div class="card-body">
+        <iframe src="https://www.flightradar24.com/simple_index.php?lat=33.45&amp;lon=-112.07&amp;z=7" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" title="FlightRadar24 AZ"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>ADS-B Exchange</div>
+      <div class="card-body">
+        <iframe src="https://globe.adsbexchange.com/?lat=33.45&amp;lon=-112.07&amp;zoom=7" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" title="ADS-B Exchange"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Official Aviation Resources</div>
+      <div class="card-body">
+        <ul class="link-list">
+          <li><a href="https://www.faa.gov/" target="_blank" rel="noopener">Federal Aviation Administration</a></li>
+          <li><a href="https://www.ntsb.gov/" target="_blank" rel="noopener">National Transportation Safety Board</a></li>
+          <li><a href="https://tfr.faa.gov/tfr2/list.html" target="_blank" rel="noopener">FAA Temporary Flight Restrictions</a></li>
+          <li><a href="https://www.aviationweather.gov/" target="_blank" rel="noopener">Aviation Weather Center</a></li>
+          <li><a href="https://www.flightradar24.com/" target="_blank" rel="noopener">FlightRadar24</a></li>
+          <li><a href="https://globe.adsbexchange.com/" target="_blank" rel="noopener">ADS-B Exchange</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script>
+FeedLoader.loadJSON('aviation_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('aviation-feed',d.items,{limit:20,showTags:true}); });
+FeedLoader.loadJSON('weather_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('avia-weather',d.items,{limit:10}); });
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+/* FLLC // GOVINT — Feed Loader
+   Loads JSON data files and renders them into tables/cards */
+(function () {
+  'use strict';
+  var DATA = 'data/latest/';
+
+  function loadJSON(file, cb) {
+    fetch(DATA + file)
+      .then(function (r) { if (r.ok) return r.json(); throw r.status; })
+      .then(cb)
+      .catch(function () {});
+  }
+
+  /* ── Render advisory table ── */
+  function renderAdvisoryTable(containerId, items, opts) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    if (!items || !items.length) { el.innerHTML = '<div class="loading">No items yet</div>'; return; }
+    opts = opts || {};
+    var limit = opts.limit || items.length;
+    var showSource = opts.showSource !== false;
+    var h = '<table class="data-tbl"><thead><tr>';
+    if (showSource) h += '<th>Source</th>';
+    h += '<th>Title</th><th>Date</th>';
+    if (opts.showTags) h += '<th>Tags</th>';
+    h += '</tr></thead><tbody>';
+    items.slice(0, limit).forEach(function (item) {
+      h += '<tr>';
+      if (showSource) {
+        var src = (item.source || item.agency || '').toUpperCase();
+        var cls = src.toLowerCase().replace(/[^a-z]/g, '');
+        h += '<td><span class="src-badge ' + cls + '">' + src + '</span></td>';
+      }
+      h += '<td><a href="' + (item.url || item.link || '#') + '" target="_blank" rel="noopener">' + (item.title || 'Untitled') + '</a></td>';
+      h += '<td class="mono text-muted" style="white-space:nowrap">' + (item.published || item.date || '').slice(0, 10) + '</td>';
+      if (opts.showTags && item.tags) {
+        h += '<td>';
+        item.tags.forEach(function (t) {
+          var cls = mapTagClass(t);
+          h += '<span class="tag ' + cls + '">' + t + '</span> ';
+        });
+        h += '</td>';
+      }
+      h += '</tr>';
+    });
+    h += '</tbody></table>';
+    el.innerHTML = h;
+  }
+
+  function mapTagClass(tag) {
+    var m = {
+      cybersecurity: 'tag-cyber', 'critical-infrastructure': 'tag-infra',
+      'law-enforcement': 'tag-law', transportation: 'tag-transport',
+      aviation: 'tag-aviation', weather: 'tag-weather',
+      'domains-dns': 'tag-domains', 'public-safety': 'tag-safety',
+      policy: 'tag-policy', research: 'tag-research'
+    };
+    return m[tag] || 'tag-research';
+  }
+
+  /* ── Render KPI from data ── */
+  function setKPI(id, value) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = typeof value === 'number' ? value.toLocaleString() : value;
+  }
+
+  /* ── Render domain table ── */
+  function renderDomainTable(containerId, items, limit) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    if (!items || !items.length) { el.innerHTML = '<div class="loading">No domain data</div>'; return; }
+    var h = '<table class="data-tbl"><thead><tr><th>Domain</th><th>Organization</th><th>State</th><th>Type</th></tr></thead><tbody>';
+    items.slice(0, limit || 200).forEach(function (d) {
+      h += '<tr><td><a href="https://' + d.domain + '" target="_blank" rel="noopener">' + d.domain + '</a></td>';
+      h += '<td>' + (d.organization_name || '') + '</td>';
+      h += '<td>' + (d.state || '') + '</td>';
+      h += '<td>' + (d.domain_type || '') + '</td></tr>';
+    });
+    h += '</tbody></table>';
+    el.innerHTML = h;
+  }
+
+  /* ── Render camera list ── */
+  function renderCameras(containerId, items) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    if (!items || !items.length) { el.innerHTML = '<div class="loading">No camera data</div>'; return; }
+    var h = '';
+    items.forEach(function (cam) {
+      h += '<div class="cam-card">';
+      h += '<div class="cam-thumb">' + (cam.snapshot_url ? '<img src="' + cam.snapshot_url + '" alt="' + cam.camera_name + '" style="width:100%;height:100%;object-fit:cover">' : '&#x1f4f9; ' + cam.camera_name) + '</div>';
+      h += '<div class="cam-info">';
+      h += '<div class="cam-name">' + cam.camera_name + '</div>';
+      h += '<div class="cam-agency">' + cam.agency + ' &middot; ' + cam.state + ' &middot; ' + (cam.region || '') + '</div>';
+      h += '<div class="cam-link"><a href="' + cam.page_url + '" target="_blank" rel="noopener">View on official page &rarr;</a></div>';
+      h += '</div></div>';
+    });
+    el.innerHTML = h;
+  }
+
+  /* ── Expose ── */
+  window.FeedLoader = {
+    loadJSON: loadJSON,
+    renderAdvisoryTable: renderAdvisoryTable,
+    renderDomainTable: renderDomainTable,
+    renderCameras: renderCameras,
+    setKPI: setKPI
+  };
+})();

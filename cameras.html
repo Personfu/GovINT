@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Public Cameras — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link active">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">PUBLIC CAMERA DIRECTORY</div>
+  <div class="page-sub">Official public traffic camera pages &middot; Agency links only &middot; No device discovery</div>
+
+  <div class="filter-bar">
+    <label>State</label>
+    <select id="f-cam-state"><option value="">All States</option><option>AZ</option><option>CA</option><option>TX</option><option>FL</option><option>NY</option></select>
+    <label>Agency</label>
+    <select id="f-cam-agency"><option value="">All Agencies</option></select>
+    <button class="btn" onclick="filterCams()">Filter</button>
+    <span class="result-count" id="cam-count"></span>
+  </div>
+
+  <div class="cam-grid" id="cam-grid"><div class="loading">Loading public camera index</div></div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot"></span>Official Camera Pages — Direct Links</div>
+    <div class="card-body">
+      <ul class="link-list">
+        <li><a href="https://www.az511.gov/cctv?start=0&amp;length=10&amp;order%5Bi%5D=1&amp;order%5Bdir%5D=asc" target="_blank" rel="noopener">Arizona 511 — CCTV Directory</a><span class="meta">AZ DOT</span></li>
+        <li><a href="https://www.az511.gov/map/Cctv" target="_blank" rel="noopener">Arizona 511 — Camera Map</a><span class="meta">AZ DOT</span></li>
+        <li><a href="https://quickmap.dot.ca.gov/" target="_blank" rel="noopener">Caltrans QuickMap</a><span class="meta">CA DOT</span></li>
+        <li><a href="https://its.txdot.gov/" target="_blank" rel="noopener">TxDOT Intelligent Transportation</a><span class="meta">TX DOT</span></li>
+        <li><a href="https://fl511.com/map" target="_blank" rel="noopener">Florida 511</a><span class="meta">FL DOT</span></li>
+        <li><a href="https://www.511ny.org/map" target="_blank" rel="noopener">New York 511</a><span class="meta">NY DOT</span></li>
+        <li><a href="https://www.511virginia.org/" target="_blank" rel="noopener">Virginia 511</a><span class="meta">VDOT</span></li>
+        <li><a href="https://www.cotrip.org/" target="_blank" rel="noopener">Colorado CDOT</a><span class="meta">CO DOT</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot blue"></span>Shodan Search — Public Device Discovery (Educational Reference)</div>
+    <div class="card-body">
+      <p class="text-muted mb-1">Search Shodan for publicly indexed devices. These links go to shodan.io search results.</p>
+      <ul class="link-list">
+        <li><a href="https://www.shodan.io/search?query=%22Arizona%22+country%3A%22US%22+city%3A%22Phoenix%22" target="_blank" rel="noopener">Shodan: Arizona / Phoenix devices</a></li>
+        <li><a href="https://www.shodan.io/search?query=%22webcam%22+country%3A%22US%22" target="_blank" rel="noopener">Shodan: US Webcam search</a></li>
+        <li><a href="https://www.shodan.io/search?query=port%3A554+%22RTSP%22+country%3A%22US%22" target="_blank" rel="noopener">Shodan: RTSP streams (US)</a></li>
+        <li><a href="https://maps.shodan.io/" target="_blank" rel="noopener">Shodan Maps — Internet Device Explorer</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card mt-2">
+    <div class="card-head"><span class="dot"></span>Geolocation Feeds</div>
+    <div class="card-body">
+      <p class="text-muted mb-1">Live geolocation feeds for publicly-documented systems.</p>
+      <ul class="link-list">
+        <li><a href="https://www.az511.gov/cctv?start=0&amp;length=10&amp;order%5Bi%5D=1&amp;order%5Bdir%5D=asc" target="_blank" rel="noopener">AZ 511 CCTV Feed (JSON/Table view)</a></li>
+        <li><a href="https://www.shodan.io/search?query=%22Arizona%22+country%3A%22US%22+city%3A%22Phoenix%22" target="_blank" rel="noopener">Shodan: Phoenix Geolocation Results</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script>
+function filterCams(){}
+FeedLoader.loadJSON('public_cameras.json', function(d){
+  FeedLoader.renderCameras('cam-grid', d);
+  document.getElementById('cam-count').textContent = (d?d.length:0)+' cameras indexed';
+});
+</script>
+</body>
+</html>

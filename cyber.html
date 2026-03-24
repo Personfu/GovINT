@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Advisories — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link active">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">CYBER ADVISORIES</div>
+  <div class="page-sub">CISA alerts &middot; KEV changes &middot; FBI / DOJ / DHS cyber notices</div>
+
+  <div class="filter-bar">
+    <label>Source</label>
+    <select id="f-source"><option value="">All Sources</option><option>CISA</option><option>FBI</option><option>DOJ</option><option>DHS</option><option>NIST</option><option>NSA</option></select>
+    <label>Tag</label>
+    <select id="f-tag"><option value="">All Tags</option><option>ransomware</option><option>critical-infrastructure</option><option>election-security</option><option>telecom</option><option>energy</option><option>water</option></select>
+    <button class="btn" onclick="filterCyber()">Filter</button>
+    <button class="btn btn-reset" onclick="resetCyber()">Reset</button>
+    <span class="result-count" id="cyber-count"></span>
+  </div>
+
+  <div class="grid-3 mb-2">
+    <div class="card span-2">
+      <div class="card-head"><span class="dot red"></span>CISA Advisories &amp; Alerts</div>
+      <div class="card-body" id="cisa-feed"><div class="loading">Loading CISA advisories</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot red"></span>CISA KEV — Known Exploited Vulnerabilities</div>
+      <div class="card-body" id="kev-feed"><div class="loading">Loading KEV catalog</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>FBI Cyber Notices</div>
+      <div class="card-body" id="fbi-feed"><div class="loading">Loading FBI cyber</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>DOJ Cybercrime Press</div>
+      <div class="card-body" id="doj-feed"><div class="loading">Loading DOJ cyber</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>DHS / TSA Notices</div>
+      <div class="card-body" id="dhs-feed"><div class="loading">Loading DHS notices</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-head"><span class="dot red"></span>Iran Cyber Threat Report</div>
+    <div class="card-body">
+      <p>Analysis of Iranian cyber operations targeting U.S. critical infrastructure.</p>
+      <p><a href="Iran" target="_blank" rel="noopener">View Full Report (PDF) &rarr;</a></p>
+      <p><a href="Government_Report.pdf" target="_blank" rel="noopener">View Government Report (PDF) &rarr;</a></p>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script>
+var allCyber = [];
+function loadCyberFeeds(){
+  FeedLoader.loadJSON('cisa_advisories.json', function(d){ FeedLoader.renderAdvisoryTable('cisa-feed',d.items,{limit:15,showTags:true}); if(d.items)allCyber=allCyber.concat(d.items); updateCount(); });
+  FeedLoader.loadJSON('cisa_kev.json', function(d){ FeedLoader.renderAdvisoryTable('kev-feed',d.items,{limit:10,showTags:true}); });
+  FeedLoader.loadJSON('fbi_cyber.json', function(d){ FeedLoader.renderAdvisoryTable('fbi-feed',d.items,{limit:10,showTags:true}); if(d.items)allCyber=allCyber.concat(d.items); updateCount(); });
+  FeedLoader.loadJSON('doj_cyber.json', function(d){ FeedLoader.renderAdvisoryTable('doj-feed',d.items,{limit:10,showTags:true}); if(d.items)allCyber=allCyber.concat(d.items); updateCount(); });
+  FeedLoader.loadJSON('dhs_news.json', function(d){ FeedLoader.renderAdvisoryTable('dhs-feed',d.items,{limit:10,showTags:true}); if(d.items)allCyber=allCyber.concat(d.items); updateCount(); });
+}
+function updateCount(){ document.getElementById('cyber-count').textContent=allCyber.length+' items loaded'; }
+function filterCyber(){ /* client-side filter placeholder */ }
+function resetCyber(){ document.getElementById('f-source').value=''; document.getElementById('f-tag').value=''; }
+loadCyberFeeds();
+</script>
+</body>
+</html>

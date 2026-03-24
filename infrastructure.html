@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infrastructure — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link active">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">INFRASTRUCTURE ALERTS</div>
+  <div class="page-sub">DOT / State DOT notices &middot; Emergency management &middot; Utility advisories</div>
+
+  <div class="grid-2">
+    <div class="card span-2">
+      <div class="card-head"><span class="dot amber"></span>Latest Transportation &amp; Infrastructure Alerts</div>
+      <div class="card-body" id="infra-feed"><div class="loading">Loading infrastructure alerts</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Weather Alerts Affecting Infrastructure</div>
+      <div class="card-body" id="weather-feed"><div class="loading">Loading weather alerts</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Official Resources</div>
+      <div class="card-body">
+        <ul class="link-list">
+          <li><a href="https://www.transportation.gov/" target="_blank" rel="noopener">U.S. Department of Transportation</a></li>
+          <li><a href="https://www.fhwa.dot.gov/" target="_blank" rel="noopener">Federal Highway Administration</a></li>
+          <li><a href="https://www.az511.gov/" target="_blank" rel="noopener">Arizona 511 Traffic</a></li>
+          <li><a href="https://www.fema.gov/" target="_blank" rel="noopener">FEMA</a></li>
+          <li><a href="https://www.phmsa.dot.gov/" target="_blank" rel="noopener">Pipeline &amp; Hazardous Materials Safety</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script>
+FeedLoader.loadJSON('infrastructure_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('infra-feed',d.items,{limit:20,showTags:true}); });
+FeedLoader.loadJSON('weather_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('weather-feed',d.items,{limit:15}); });
+</script>
+</body>
+</html>

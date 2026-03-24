@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maps — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link active">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">INTERACTIVE MAPS</div>
+  <div class="page-sub">Public camera locations &middot; Alert regions &middot; Infrastructure overlays</div>
+
+  <div class="card mb-2">
+    <div class="card-head"><span class="dot blue"></span>Public Infrastructure &amp; Camera Map</div>
+    <div class="card-body"><div id="main-map" class="map-container" style="height:550px"></div></div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Arizona Traffic — AZ 511</div>
+      <div class="card-body">
+        <iframe src="https://www.az511.gov/map/Cctv" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Shodan Internet Exposure — AZ</div>
+      <div class="card-body">
+        <iframe src="https://maps.shodan.io/#33.4484/-112.074/11/satellite/" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot amber"></span>USGS Earthquake Hazards</div>
+      <div class="card-body">
+        <iframe src="https://earthquake.usgs.gov/earthquakes/map/" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>OpenStreetMap — Arizona</div>
+      <div class="card-body">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-115.0%2C31.3%2C-109.0%2C37.0&amp;layer=mapnik" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script src="assets/js/maps.js"></script>
+<script>
+setTimeout(function(){
+  if(typeof L==='undefined')return;
+  var m=GovMaps.initMap('main-map',{center:[38.9,-98.5],zoom:4});
+  GovMaps.addLegend(m,[
+    {color:'#00ccff',label:'Public Cameras'},
+    {color:'#ffaa00',label:'Weather Alerts'},
+    {color:'#cc0000',label:'Infrastructure Notices'}
+  ]);
+  FeedLoader.loadJSON('public_cameras.json',function(d){
+    if(!d)return;
+    var pts=[];
+    d.forEach(function(c){if(c.lat&&c.lon)pts.push({lat:c.lat,lon:c.lon,color:'#00ccff',popup:'<b>'+c.camera_name+'</b><br>'+c.agency+' ('+c.state+')<br><a href="'+c.page_url+'" target="_blank">View &rarr;</a>'})});
+    GovMaps.addMarkers(m,pts);
+  });
+},500);
+</script>
+</body>
+</html>

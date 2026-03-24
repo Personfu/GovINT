@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-brand">
+    <h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1>
+  </div>
+  <div class="header-meta">
+    <span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span>
+    <span class="header-clock" id="header-clock"></span>
+  </div>
+</header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link active">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link">Archive</a>
+</nav>
+
+<div class="ticker-wrap">
+  <div class="ticker-label">LIVE FEED</div>
+  <div class="ticker-track">
+    <div class="ticker-items" id="ticker">
+      <span class="t-src">CISA</span> <span>Loading latest advisories...</span>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="page-title">GOVINT // FLLC PUBLIC INTEL CONSOLE</div>
+  <div class="page-sub">Daily cyber, infrastructure, and government-source reporting for education, research, and public awareness</div>
+
+  <div class="grid-4 mb-2">
+    <div class="kpi"><div class="kpi-val" id="kpi-advisories">—</div><div class="kpi-label">Advisories Today</div></div>
+    <div class="kpi"><div class="kpi-val blue" id="kpi-agencies">12</div><div class="kpi-label">Agencies Monitored</div></div>
+    <div class="kpi"><div class="kpi-val green" id="kpi-cameras">—</div><div class="kpi-label">Camera Pages Indexed</div></div>
+    <div class="kpi"><div class="kpi-val amber" id="kpi-update">—</div><div class="kpi-label">Last Update</div></div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card span-2">
+      <div class="card-head"><span class="dot red"></span>Latest Cyber Advisories</div>
+      <div class="card-body" id="dash-cyber"><div class="loading">Loading CISA / FBI / DOJ advisories</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Category Breakdown</div>
+      <div class="card-body"><canvas id="chart-categories"></canvas></div>
+    </div>
+
+    <div class="card">
+      <div class="card-head"><span class="dot blue"></span>Map Preview — Public Alert Regions</div>
+      <div class="card-body"><div id="dash-map" class="map-container" style="height:300px"></div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot amber"></span>Infrastructure &amp; Aviation</div>
+      <div class="card-body" id="dash-infra"><div class="loading">Loading infrastructure alerts</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Domain Intelligence</div>
+      <div class="card-body" id="dash-domains"><div class="loading">Loading .gov summary</div></div>
+    </div>
+  </div>
+
+  <div class="grid-2 mt-2">
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Daily Brief</div>
+      <div class="card-body" id="dash-brief"><div class="loading">Loading daily brief</div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Source Health</div>
+      <div class="card-body" id="dash-health"><div class="loading">Loading source status</div></div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="methodology">
+    <strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources
+    for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices,
+    or restricted feeds.
+  </div>
+  <div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar">
+  <span class="status-dot"></span>
+  <span>FLLC // GOVINT</span>
+  <span>|</span>
+  <span id="status-update">Last update: &mdash;</span>
+  <span style="margin-left:auto">Educational &amp; Research Use Only</span>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+
+<script src="assets/js/charts.js"></script>
+<script src="assets/js/maps.js"></script>
+<script>
+(function(){
+  // Load cyber advisories for dashboard
+  FeedLoader.loadJSON('cisa_advisories.json', function(d){
+    FeedLoader.renderAdvisoryTable('dash-cyber', d.items, {limit:10, showTags:true});
+    FeedLoader.setKPI('kpi-advisories', d.items ? d.items.length : 0);
+    if(d.fetched_at) window.setLastUpdate(d.fetched_at);
+    // Ticker
+    if(d.items && d.items.length){
+      var t=document.getElementById('ticker');
+      var h='';
+      d.items.slice(0,15).forEach(function(i){
+        h+='<span class="t-time">'+(i.published||'').slice(0,10)+'</span> ';
+        h+='<span class="t-src">'+(i.source||i.agency||'')+'</span> ';
+        h+='<span>'+i.title+'</span>';
+      });
+      t.innerHTML=h+h;
+    }
+  });
+
+  // Infrastructure
+  FeedLoader.loadJSON('infrastructure_alerts.json', function(d){
+    FeedLoader.renderAdvisoryTable('dash-infra', d.items, {limit:5});
+  });
+
+  // Domain summary
+  FeedLoader.loadJSON('gov_domains_summary.json', function(d){
+    var el=document.getElementById('dash-domains');
+    if(!d){el.innerHTML='<div class="loading">No data</div>';return;}
+    var h='<table class="data-tbl">';
+    h+='<tr><td>Total Domains</td><td class="mono text-accent">'+(d.total||0).toLocaleString()+'</td></tr>';
+    h+='<tr><td>Federal</td><td class="mono">'+(d.federal||0).toLocaleString()+'</td></tr>';
+    h+='<tr><td>Non-Federal</td><td class="mono">'+(d.non_federal||0).toLocaleString()+'</td></tr>';
+    h+='<tr><td>States Represented</td><td class="mono">'+(d.states_count||0)+'</td></tr>';
+    h+='</table>';
+    el.innerHTML=h;
+  });
+
+  // Daily brief
+  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+    var el=document.getElementById('dash-brief');
+    if(!d||!d.notable){el.innerHTML='<div class="text-muted">No brief yet</div>';return;}
+    var h='<p class="text-muted mb-1">'+d.date+'</p>';
+    h+='<ul class="link-list">';
+    d.notable.forEach(function(n){
+      h+='<li><a href="'+(n.url||'#')+'" target="_blank" rel="noopener">'+n.title+'</a><span class="meta">'+n.source+'</span></li>';
+    });
+    h+='</ul>';
+    el.innerHTML=h;
+  });
+
+  // Source health
+  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+    var el=document.getElementById('dash-health');
+    if(!d||!d.source_counts){el.innerHTML='<div class="text-muted">No health data</div>';return;}
+    var h='<table class="data-tbl"><tr><th>Source</th><th>Items</th></tr>';
+    Object.keys(d.source_counts).forEach(function(s){
+      h+='<tr><td>'+s+'</td><td class="mono">'+d.source_counts[s]+'</td></tr>';
+    });
+    h+='</table>';
+    el.innerHTML=h;
+  });
+
+  // Category chart
+  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+    if(d&&d.category_counts) GovCharts.drawBarChart('chart-categories', d.category_counts, {height:220});
+  });
+
+  // Map preview
+  setTimeout(function(){
+    if(typeof L!=='undefined'&&document.getElementById('dash-map')){
+      var m=GovMaps.initMap('dash-map',{center:[38.9,-98.5],zoom:4});
+      FeedLoader.loadJSON('public_cameras.json',function(d){
+        if(!d||!d.length)return;
+        d.forEach(function(cam){
+          if(cam.lat&&cam.lon){
+            GovMaps.addMarkers(m,[{lat:cam.lat,lon:cam.lon,color:'#00ccff',
+              popup:'<b>'+cam.camera_name+'</b><br>'+cam.agency+' ('+cam.state+')'}]);
+          }
+        });
+      });
+    }
+  },500);
+
+  // Cameras KPI
+  FeedLoader.loadJSON('public_cameras.json', function(d){
+    FeedLoader.setKPI('kpi-cameras', d ? d.length : 0);
+  });
+
+  // Update KPI
+  FeedLoader.loadJSON('cisa_advisories.json', function(d){
+    if(d&&d.fetched_at) FeedLoader.setKPI('kpi-update', d.fetched_at.slice(0,10));
+  });
+})();
+</script>
+</body>
+</html>

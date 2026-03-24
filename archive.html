@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive — GOVINT // FLLC</title>
+<link rel="stylesheet" href="assets/css/fllc-govint.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous"/>
+</head>
+<body>
+<header class="site-header"><div class="site-brand"><h1><span class="accent">GOVINT</span><span class="sep">//</span>FLLC PUBLIC INTEL CONSOLE</h1></div><div class="header-meta"><span class="site-tagline">Public Cyber &amp; Infrastructure Intelligence</span><span class="header-clock" id="header-clock"></span></div></header>
+<nav class="nav-bar">
+  <a href="index.html" class="nav-link">Dashboard</a>
+  <a href="cyber.html" class="nav-link">Cyber</a>
+  <a href="domains.html" class="nav-link">Domains</a>
+  <a href="infrastructure.html" class="nav-link">Infrastructure</a>
+  <a href="aviation.html" class="nav-link">Aviation</a>
+  <a href="cameras.html" class="nav-link">Cameras</a>
+  <a href="maps.html" class="nav-link">Maps</a>
+  <a href="reports.html" class="nav-link">Reports</a>
+  <a href="archive.html" class="nav-link active">Archive</a>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-title">ARCHIVE &amp; RESEARCH</div>
+  <div class="page-sub">Historical snapshots &middot; Data downloads &middot; Research references</div>
+
+  <div class="card mb-2">
+    <div class="card-head"><span class="dot"></span>Archived Data Snapshots</div>
+    <div class="card-body" id="archive-list">
+      <p class="text-muted">Archived daily snapshots are stored in <code>data/archive/</code> and become available after the first daily workflow run.</p>
+      <p class="text-muted">Each day's collection is saved as <code>data/archive/YYYY-MM-DD/</code> containing all fetched JSON files.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Data Downloads</div>
+      <div class="card-body">
+        <ul class="link-list">
+          <li><a href="data/latest/cisa_advisories.json">cisa_advisories.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/cisa_kev.json">cisa_kev.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/fbi_cyber.json">fbi_cyber.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/doj_cyber.json">doj_cyber.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/dhs_news.json">dhs_news.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/gov_domains_summary.json">gov_domains_summary.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/infrastructure_alerts.json">infrastructure_alerts.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/aviation_alerts.json">aviation_alerts.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/weather_alerts.json">weather_alerts.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/latest/public_cameras.json">public_cameras.json</a><span class="meta">Latest</span></li>
+          <li><a href="data/reports/daily_brief.json">daily_brief.json</a><span class="meta">Report</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="dot"></span>Research &amp; Reference Material</div>
+      <div class="card-body">
+        <ul class="link-list">
+          <li><a href="Iran" target="_blank" rel="noopener">Iran Cyber Threat Report</a><span class="meta">PDF</span></li>
+          <li><a href="Government_Report.pdf" target="_blank" rel="noopener">Government Report</a><span class="meta">PDF</span></li>
+          <li><a href="agencies-and-subs.csv">Federal Agencies &amp; Sub-agencies</a><span class="meta">CSV</span></li>
+          <li><a href="current-federal.csv">Current Federal Domains</a><span class="meta">CSV</span></li>
+          <li><a href="current-full.csv">Current Full .gov Domain List</a><span class="meta">CSV</span></li>
+          <li><a href="gov.txt">Government Zone File</a><span class="meta">TXT</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+<div class="methodology"><strong>METHODOLOGY:</strong> GOVINT indexes public-interest information from official or otherwise lawful public sources for education and research. It does not identify, access, or facilitate access to non-public systems, exposed devices, or restricted feeds.</div>
+<div class="credits">Built by <strong>Personfu</strong> under the <strong>FLLC</strong> design system.</div>
+</footer>
+<div class="status-bar"><span class="status-dot"></span><span>FLLC // GOVINT</span><span>|</span><span id="status-update">Last update: &mdash;</span><span style="margin-left:auto">Educational &amp; Research Use Only</span></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/feed-loader.js"></script>
+</body>
+</html>
