@@ -86,10 +86,33 @@
 <script src="assets/js/feed-loader.js"></script>
 
 <script>
-function filterCams(){}
+var allCameras = [];
+function filterCams(){
+  var state = document.getElementById('f-cam-state').value;
+  var agency = document.getElementById('f-cam-agency').value;
+  var filtered = allCameras.filter(function(c){
+    if (state && c.state !== state) return false;
+    if (agency && c.agency !== agency) return false;
+    return true;
+  });
+  FeedLoader.renderCameras('cam-grid', filtered);
+  document.getElementById('cam-count').textContent = filtered.length + ' of ' + allCameras.length + ' cameras';
+}
 FeedLoader.loadJSON('public_cameras.json', function(d){
+  if (!d || !d.length) return;
+  allCameras = d;
   FeedLoader.renderCameras('cam-grid', d);
-  document.getElementById('cam-count').textContent = (d?d.length:0)+' cameras indexed';
+  document.getElementById('cam-count').textContent = d.length + ' cameras indexed (' +
+    d.filter(function(c){return c.type==='direct-image'}).length + ' live feeds)';
+  // Populate agency filter
+  var agencies = {};
+  d.forEach(function(c){ agencies[c.agency] = true; });
+  var sel = document.getElementById('f-cam-agency');
+  Object.keys(agencies).sort().forEach(function(a){
+    var o = document.createElement('option');
+    o.value = a; o.textContent = a;
+    sel.appendChild(o);
+  });
 });
 </script>
 </body>

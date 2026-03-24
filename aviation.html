@@ -37,13 +37,23 @@
     <div class="card">
       <div class="card-head"><span class="dot"></span>Live Flight Tracking — Arizona</div>
       <div class="card-body">
-        <iframe src="https://www.flightradar24.com/simple_index.php?lat=33.45&amp;lon=-112.07&amp;z=7" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" title="FlightRadar24 AZ"></iframe>
+        <p class="text-muted mb-1">Third-party flight trackers block iframe embedding. Use these direct links:</p>
+        <ul class="link-list">
+          <li><a href="https://www.flightradar24.com/33.45,-112.07/7" target="_blank" rel="noopener">FlightRadar24 — Phoenix Area</a></li>
+          <li><a href="https://globe.adsbexchange.com/?lat=33.45&amp;lon=-112.07&amp;zoom=7" target="_blank" rel="noopener">ADS-B Exchange — Phoenix Area</a></li>
+          <li><a href="https://planefinder.net/flight/near/33.45,-112.07/7" target="_blank" rel="noopener">Plane Finder — Phoenix Area</a></li>
+        </ul>
+        <div id="avia-map" class="map-container" style="height:360px;margin-top:12px"></div>
       </div>
     </div>
     <div class="card">
       <div class="card-head"><span class="dot"></span>ADS-B Exchange</div>
       <div class="card-body">
-        <iframe src="https://globe.adsbexchange.com/?lat=33.45&amp;lon=-112.07&amp;zoom=7" height="360" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin" title="ADS-B Exchange"></iframe>
+        <p class="text-muted mb-1">ADS-B Exchange blocks cross-origin framing. Open directly:</p>
+        <ul class="link-list">
+          <li><a href="https://globe.adsbexchange.com/?lat=33.45&amp;lon=-112.07&amp;zoom=7" target="_blank" rel="noopener">ADS-B Exchange Globe — Arizona</a></li>
+          <li><a href="https://globe.adsbexchange.com/" target="_blank" rel="noopener">ADS-B Exchange Globe — Full Map</a></li>
+        </ul>
       </div>
     </div>
     <div class="card">
@@ -69,10 +79,24 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/feed-loader.js"></script>
+<script src="assets/js/maps.js"></script>
 
 <script>
 FeedLoader.loadJSON('aviation_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('aviation-feed',d.items,{limit:20,showTags:true}); });
 FeedLoader.loadJSON('weather_alerts.json', function(d){ FeedLoader.renderAdvisoryTable('avia-weather',d.items,{limit:10}); });
+// Arizona map with airport markers
+setTimeout(function(){
+  if(typeof L==='undefined'||typeof GovMaps==='undefined')return;
+  var m=GovMaps.initMap('avia-map',{center:[33.45,-112.07],zoom:7});
+  GovMaps.addMarkers(m,[
+    {lat:33.4373,lon:-112.0078,color:'#ffaa00',popup:'<b>PHX</b> Phoenix Sky Harbor'},
+    {lat:33.3039,lon:-111.6553,color:'#ffaa00',popup:'<b>AZA</b> Phoenix-Mesa Gateway'},
+    {lat:32.1161,lon:-110.9410,color:'#ffaa00',popup:'<b>TUS</b> Tucson International'},
+    {lat:35.1345,lon:-111.6691,color:'#ffaa00',popup:'<b>FLG</b> Flagstaff Pulliam'},
+    {lat:34.6505,lon:-112.4195,color:'#ffaa00',popup:'<b>PRC</b> Prescott Regional'},
+  ]);
+  GovMaps.addLegend(m,[{color:'#ffaa00',label:'Arizona Airports'}]);
+},500);
 </script>
 </body>
 </html>

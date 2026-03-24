@@ -81,7 +81,7 @@
 
 <script src="assets/js/charts.js"></script>
 <script>
-FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+FeedLoader.loadFile('data/reports/daily_brief.json', function(d){
   if(!d){return;}
   var el=document.getElementById('daily-brief');
   var h='<p class="mono text-accent mb-1">'+(d.date||'')+'</p>';

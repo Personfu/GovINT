@@ -11,6 +11,14 @@
       .catch(function () {});
   }
 
+  /* Load from an explicit relative path (no prefix) */
+  function loadFile(path, cb) {
+    fetch(path)
+      .then(function (r) { if (r.ok) return r.json(); throw r.status; })
+      .then(cb)
+      .catch(function () {});
+  }
+
   /* ── Render advisory table ── */
   function renderAdvisoryTable(containerId, items, opts) {
     var el = document.getElementById(containerId);
@@ -80,27 +88,74 @@
     el.innerHTML = h;
   }
 
-  /* ── Render camera list ── */
+  /* ── Build camera image URL from data ── */
+  function buildCameraSrc(cam) {
+    if (cam.type === 'direct-image' && cam.baseUrl && cam.id != null) {
+      return cam.baseUrl + cam.id + '?t=' + Date.now();
+    }
+    if (cam.snapshot_url) return cam.snapshot_url;
+    return '';
+  }
+
+  /* ── Render live camera grid with auto-refresh ── */
   function renderCameras(containerId, items) {
     var el = document.getElementById(containerId);
     if (!el) return;
     if (!items || !items.length) { el.innerHTML = '<div class="loading">No camera data</div>'; return; }
-    var h = '';
+    el.innerHTML = '';
     items.forEach(function (cam) {
-      h += '<div class="cam-card">';
-      h += '<div class="cam-thumb">' + (cam.snapshot_url ? '<img src="' + cam.snapshot_url + '" alt="' + cam.camera_name + '" style="width:100%;height:100%;object-fit:cover">' : '&#x1f4f9; ' + cam.camera_name) + '</div>';
-      h += '<div class="cam-info">';
-      h += '<div class="cam-name">' + cam.camera_name + '</div>';
-      h += '<div class="cam-agency">' + cam.agency + ' &middot; ' + cam.state + ' &middot; ' + (cam.region || '') + '</div>';
-      h += '<div class="cam-link"><a href="' + cam.page_url + '" target="_blank" rel="noopener">View on official page &rarr;</a></div>';
-      h += '</div></div>';
+      var card = document.createElement('div');
+      card.className = 'cam-card';
+
+      var thumbDiv = document.createElement('div');
+      thumbDiv.className = 'cam-thumb';
+
+      var src = buildCameraSrc(cam);
+      if (src) {
+        var img = document.createElement('img');
+        img.className = 'camera-thumb';
+        img.alt = cam.title || cam.camera_name || '';
+        img.loading = 'lazy';
+        img.referrerPolicy = 'no-referrer';
+        img.src = src;
+        img.addEventListener('error', function () {
+          img.style.opacity = '0.35';
+          img.alt = 'Camera unavailable';
+          if (!img.dataset.retried) {
+            img.dataset.retried = '1';
+            setTimeout(function () {
+              img.src = buildCameraSrc(cam);
+            }, 5000);
+          }
+        });
+        thumbDiv.appendChild(img);
+        // Auto-refresh every 30s for direct-image cameras
+        if (cam.type === 'direct-image') {
+          setInterval(function () {
+            img.src = buildCameraSrc(cam);
+            img.dataset.retried = '';
+          }, cam.refreshMs || 30000);
+        }
+      } else {
+        thumbDiv.textContent = '\uD83D\uDCF9 ' + (cam.title || cam.camera_name || 'Camera');
+      }
+      card.appendChild(thumbDiv);
+
+      var info = document.createElement('div');
+      info.className = 'cam-info';
+      info.innerHTML =
+        '<div class="cam-name">' + (cam.title || cam.camera_name || '') + '</div>' +
+        '<div class="cam-agency">' + (cam.agency || '') + ' &middot; ' + (cam.state || '') + '</div>' +
+        '<div class="cam-link"><a href="' + (cam.page_url || '#') + '" target="_blank" rel="noopener">View on official page &rarr;</a></div>';
+      card.appendChild(info);
+      el.appendChild(card);
     });
-    el.innerHTML = h;
   }
 
   /* ── Expose ── */
   window.FeedLoader = {
     loadJSON: loadJSON,
+    loadFile: loadFile,
     renderAdvisoryTable: renderAdvisoryTable,
     renderDomainTable: renderDomainTable,
     renderCameras: renderCameras,

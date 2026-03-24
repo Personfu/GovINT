@@ -144,7 +144,7 @@
   });
 
   // Daily brief
-  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+  FeedLoader.loadFile('data/reports/daily_brief.json', function(d){
     var el=document.getElementById('dash-brief');
     if(!d||!d.notable){el.innerHTML='<div class="text-muted">No brief yet</div>';return;}
     var h='<p class="text-muted mb-1">'+d.date+'</p>';
@@ -157,7 +157,7 @@
   });
 
   // Source health
-  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+  FeedLoader.loadFile('data/reports/daily_brief.json', function(d){
     var el=document.getElementById('dash-health');
     if(!d||!d.source_counts){el.innerHTML='<div class="text-muted">No health data</div>';return;}
     var h='<table class="data-tbl"><tr><th>Source</th><th>Items</th></tr>';
@@ -169,7 +169,7 @@
   });
 
   // Category chart
-  FeedLoader.loadJSON('../data/reports/daily_brief.json', function(d){
+  FeedLoader.loadFile('data/reports/daily_brief.json', function(d){
     if(d&&d.category_counts) GovCharts.drawBarChart('chart-categories', d.category_counts, {height:220});
   });
 
