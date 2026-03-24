@@ -1,0 +1,1402 @@
+[
+  {
+    "domain": "westpointne.gov",
+    "organization_name": "City of West Point Nebraska",
+    "suborganization_name": "",
+    "state": "NE",
+    "domain_type": "City"
+  },
+  {
+    "domain": "cityofwoodburyga.gov",
+    "organization_name": "City of Woodbury",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "harrisburgpa.gov",
+    "organization_name": "City of Harrisburg",
+    "suborganization_name": "",
+    "state": "PA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "sigpr.gov",
+    "organization_name": "Department of the Treasury",
+    "suborganization_name": "Special IG for Pandemic Recovery",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "mcdowellcountywv.gov",
+    "organization_name": "McDowell County Commission",
+    "suborganization_name": "",
+    "state": "WV",
+    "domain_type": "County"
+  },
+  {
+    "domain": "frtr.gov",
+    "organization_name": "Environmental Protection Agency",
+    "suborganization_name": "",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "occnet.gov",
+    "organization_name": "Department of the Treasury",
+    "suborganization_name": "Office of the Comptroller of the Currency",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "fema.gov",
+    "organization_name": "Department of Homeland Security",
+    "suborganization_name": "Federal Emergency Management Agency",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "manteca.gov",
+    "organization_name": "City of Manteca",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "detroit.gov",
+    "organization_name": "City of Detroit",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "cityofsouthport.gov",
+    "organization_name": "City of Southport",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "boonenc.gov",
+    "organization_name": "Town of Boone",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "rebuildflorida.gov",
+    "organization_name": "FloridaCommerce",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "hawkpointmo.gov",
+    "organization_name": "City of Hawk Point, Missouri",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "City"
+  },
+  {
+    "domain": "dea.gov",
+    "organization_name": "Department of Justice",
+    "suborganization_name": "Drug Enforcement Administration",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "townofhomerny.gov",
+    "organization_name": "Town of Homer",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "baldwinparkca.gov",
+    "organization_name": "City of Baldwin Park",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "thebraininitiative.gov",
+    "organization_name": "Department of Health and Human Services",
+    "suborganization_name": "National Institute of Neurological Disorders and Stroke",
+    "state": "MD",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "housinglincolncountyor.gov",
+    "organization_name": "Housing Authority of Lincoln County",
+    "suborganization_name": "",
+    "state": "OR",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "limestonecountyema-al.gov",
+    "organization_name": "Limestone County Emergency Management Agency",
+    "suborganization_name": "",
+    "state": "AL",
+    "domain_type": "County"
+  },
+  {
+    "domain": "cityofswartzcreekmi.gov",
+    "organization_name": "City of Swartz Creek",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "scottcountyva.gov",
+    "organization_name": "Scott County Board of Supervisors",
+    "suborganization_name": "",
+    "state": "VA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "sayvillefd.gov",
+    "organization_name": "Sayville Fire District",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "villageofspencerwi.gov",
+    "organization_name": "Village of Spencer",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "waukeganil.gov",
+    "organization_name": "City of Waukegan",
+    "suborganization_name": "",
+    "state": "IL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "shastacounty.gov",
+    "organization_name": "Shasta County",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "glotwpnjpd.gov",
+    "organization_name": "Gloucester Township Police",
+    "suborganization_name": "",
+    "state": "NJ",
+    "domain_type": "City"
+  },
+  {
+    "domain": "waltontaxcollectorfl.gov",
+    "organization_name": "Walton County Tax Collector",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "County"
+  },
+  {
+    "domain": "viejastribalcourts-nsn.gov",
+    "organization_name": "Viejas Tribal Court",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "townofgreengrovewi.gov",
+    "organization_name": "Town of Green Grove",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "augustaky.gov",
+    "organization_name": "City of Augusta",
+    "suborganization_name": "",
+    "state": "KY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "olatheks.gov",
+    "organization_name": "City of Olathe",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "City"
+  },
+  {
+    "domain": "kalapks.gov",
+    "organization_name": "Kansas Judicial Branch",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "newportnc.gov",
+    "organization_name": "Town of Newport, NC",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "indy.gov",
+    "organization_name": "City of Indianapolis - Marion County",
+    "suborganization_name": "",
+    "state": "IN",
+    "domain_type": "City"
+  },
+  {
+    "domain": "dublinohiousa.gov",
+    "organization_name": "City of Dublin, Ohio",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "City"
+  },
+  {
+    "domain": "townofbrinybreezes-fl.gov",
+    "organization_name": "Briny Breezes, Town of",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "nemahacountyne.gov",
+    "organization_name": "Nemaha County",
+    "suborganization_name": "",
+    "state": "NE",
+    "domain_type": "County"
+  },
+  {
+    "domain": "cheyennecountyne.gov",
+    "organization_name": "Cheyenne County Courthouse",
+    "suborganization_name": "",
+    "state": "NE",
+    "domain_type": "County - Election"
+  },
+  {
+    "domain": "ibervilleoep.gov",
+    "organization_name": "Iberville Parish Office of Emergency Preparedness",
+    "suborganization_name": "",
+    "state": "LA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "ravennaoh.gov",
+    "organization_name": "City of Ravenna",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "City"
+  },
+  {
+    "domain": "woodridgeil.gov",
+    "organization_name": "Village of Woodridge",
+    "suborganization_name": "",
+    "state": "IL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "danvilleva.gov",
+    "organization_name": "City of Danville",
+    "suborganization_name": "",
+    "state": "VA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "greenwoodtownshipil.gov",
+    "organization_name": "Greenwood Township",
+    "suborganization_name": "",
+    "state": "IL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "earth.gov",
+    "organization_name": "National Aeronautics and Space Administration",
+    "suborganization_name": "NASA Earth Science Division",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "jem.gov",
+    "organization_name": "Department of the Interior",
+    "suborganization_name": "USGS-NWRC",
+    "state": "LA",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "blm.gov",
+    "organization_name": "Department of the Interior",
+    "suborganization_name": "Bureau of Land Management",
+    "state": "ID",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "shastalakefpd.gov",
+    "organization_name": "Shasta Lake Fire Protection District",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "kodiak.gov",
+    "organization_name": "Kodiak Island Borough",
+    "suborganization_name": "",
+    "state": "AK",
+    "domain_type": "County"
+  },
+  {
+    "domain": "cityoffayettemo.gov",
+    "organization_name": "City of Fayette",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "City"
+  },
+  {
+    "domain": "louisburgkansas.gov",
+    "organization_name": "City of Louisburg",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "City"
+  },
+  {
+    "domain": "sweetwateral.gov",
+    "organization_name": "Town of Sweet Water Alabama",
+    "suborganization_name": "",
+    "state": "AL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "highlandil.gov",
+    "organization_name": "City Of Highland Illinois",
+    "suborganization_name": "",
+    "state": "IL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "auburnma.gov",
+    "organization_name": "Town of Auburn",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "cuwcd.gov",
+    "organization_name": "Central Utah Water Conservancy District",
+    "suborganization_name": "",
+    "state": "UT",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "rockinghampd.gov",
+    "organization_name": "Rockingham Police Department",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "wvconsumerprotection.gov",
+    "organization_name": "West Virginia Attorney General's Office",
+    "suborganization_name": "",
+    "state": "WV",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "willingny.gov",
+    "organization_name": "Town of Willing",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "lancastervillageny.gov",
+    "organization_name": "Village of Lancaster",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "masenate.gov",
+    "organization_name": "Massachusetts Legislature",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "manliusvillageny.gov",
+    "organization_name": "Village of Manlius",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "millikenco.gov",
+    "organization_name": "Town of Milliken",
+    "suborganization_name": "",
+    "state": "CO",
+    "domain_type": "City"
+  },
+  {
+    "domain": "brattleboro.gov",
+    "organization_name": "Town of Brattleboro",
+    "suborganization_name": "",
+    "state": "VT",
+    "domain_type": "City"
+  },
+  {
+    "domain": "villageoftheresawi.gov",
+    "organization_name": "Village of Theresa",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "conwaynhrec.gov",
+    "organization_name": "Conway, NH Parks and Recreation Department",
+    "suborganization_name": "",
+    "state": "NH",
+    "domain_type": "City"
+  },
+  {
+    "domain": "azstatejobs.gov",
+    "organization_name": "State of Arizona, Executive Branch",
+    "suborganization_name": "",
+    "state": "AZ",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "jewettpdtx.gov",
+    "organization_name": "Jewett Police Department",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "bossierparishla.gov",
+    "organization_name": "Bossier Parish Police Jury",
+    "suborganization_name": "",
+    "state": "LA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "cityofnichollsga.gov",
+    "organization_name": "City Of Nicholls",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "lawrencewi.gov",
+    "organization_name": "Town of Lawrence",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "phoenixoregon.gov",
+    "organization_name": "City of Phoenix",
+    "suborganization_name": "",
+    "state": "OR",
+    "domain_type": "City"
+  },
+  {
+    "domain": "dixoncountyne.gov",
+    "organization_name": "Dixon, County of",
+    "suborganization_name": "",
+    "state": "NE",
+    "domain_type": "County"
+  },
+  {
+    "domain": "irvingtonnj.gov",
+    "organization_name": "Township of Irvington",
+    "suborganization_name": "",
+    "state": "NJ",
+    "domain_type": "City"
+  },
+  {
+    "domain": "safeandsoundiowa.gov",
+    "organization_name": "State of Iowa - OCIO",
+    "suborganization_name": "",
+    "state": "IA",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "vofishkill.gov",
+    "organization_name": "VILLAGE OF FISHKILL",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "hillsboromo.gov",
+    "organization_name": "City of Hillsboro",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "City"
+  },
+  {
+    "domain": "nacosanitary.gov",
+    "organization_name": "Naco Sanitary District",
+    "suborganization_name": "",
+    "state": "AZ",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "isanticountymn.gov",
+    "organization_name": "Isanti County",
+    "suborganization_name": "",
+    "state": "MN",
+    "domain_type": "County"
+  },
+  {
+    "domain": "hiawasseega.gov",
+    "organization_name": "City of Hiawassee",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "piercecountyga.gov",
+    "organization_name": "Pierce County, Georgia",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "dixhillsfd.gov",
+    "organization_name": "Dix Hills Fire District",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "playwisefl.gov",
+    "organization_name": "Florida Gaming Control Commission",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "montcomo911.gov",
+    "organization_name": "Montgomery County Joint Communications Center",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "County"
+  },
+  {
+    "domain": "barrytownshipmn.gov",
+    "organization_name": "Barry Township",
+    "suborganization_name": "",
+    "state": "MN",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ncrc.gov",
+    "organization_name": "Department of Energy",
+    "suborganization_name": "Oak Ridge National Laboratory",
+    "state": "TN",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "lakelandtn.gov",
+    "organization_name": "City of Lakeland",
+    "suborganization_name": "",
+    "state": "TN",
+    "domain_type": "City"
+  },
+  {
+    "domain": "wildwoodpolice-fl.gov",
+    "organization_name": "City of Wildwood Police Department",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "pandemicflu.gov",
+    "organization_name": "Department of Health and Human Services",
+    "suborganization_name": "Centers for Disease Control and Prevention",
+    "state": "GA",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "oh.gov",
+    "organization_name": "State of Ohio",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "fedramp.gov",
+    "organization_name": "General Services Administration",
+    "suborganization_name": "Federal Acquisition Service",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "cummington-ma.gov",
+    "organization_name": "Town of Cummington",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "trumpgoldcard.gov",
+    "organization_name": "Department of Commerce",
+    "suborganization_name": "",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "boontownshipmichigan.gov",
+    "organization_name": "Boon Township",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "munsontwpoh.gov",
+    "organization_name": "Munson Township",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "City - Election"
+  },
+  {
+    "domain": "okmulgeecounty.gov",
+    "organization_name": "Okmulgee County",
+    "suborganization_name": "",
+    "state": "OK",
+    "domain_type": "County"
+  },
+  {
+    "domain": "eastbridgewaterma.gov",
+    "organization_name": "Town of East Bridgewater",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "troytx.gov",
+    "organization_name": "City of Troy",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "helenatownshipmi.gov",
+    "organization_name": "Helena Township",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "coryellcountytx.gov",
+    "organization_name": "Coryell County",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "County"
+  },
+  {
+    "domain": "warrencomosheriff.gov",
+    "organization_name": "Warren County Sheriff's Department",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "County"
+  },
+  {
+    "domain": "jccvahousing.gov",
+    "organization_name": "James City County, Virginia",
+    "suborganization_name": "",
+    "state": "VA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "bihasitka-nsn.gov",
+    "organization_name": "Baranof Island Housing Authority",
+    "suborganization_name": "",
+    "state": "AK",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "nooksack-nsn.gov",
+    "organization_name": "Nooksack Indian Tribe",
+    "suborganization_name": "",
+    "state": "WA",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "sheridancountyks.gov",
+    "organization_name": "Sheridan County",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "County"
+  },
+  {
+    "domain": "oxfordmi.gov",
+    "organization_name": "Village of Oxford",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "botetourtva.gov",
+    "organization_name": "Botetourt County",
+    "suborganization_name": "",
+    "state": "VA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "townofhollandny.gov",
+    "organization_name": "TOWN OF HOLLAND",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "fbo.gov",
+    "organization_name": "General Services Administration",
+    "suborganization_name": "Office of GSA IT",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "nvsexoffenders.gov",
+    "organization_name": "State of Nevada",
+    "suborganization_name": "",
+    "state": "NV",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "govmi.gov",
+    "organization_name": "Department of Technology Management and Budget",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "matadortx.gov",
+    "organization_name": "City of Matador",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City - Election"
+  },
+  {
+    "domain": "colquittga.gov",
+    "organization_name": "City of Colquitt",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "pontotocms.gov",
+    "organization_name": "City of Pontotoc",
+    "suborganization_name": "",
+    "state": "MS",
+    "domain_type": "City"
+  },
+  {
+    "domain": "mwtown.gov",
+    "organization_name": "Town of Manitowish Waters",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "azsos.gov",
+    "organization_name": "Arizona Secretary of State",
+    "suborganization_name": "",
+    "state": "AZ",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "salinecountymo.gov",
+    "organization_name": "County of Saline",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "County"
+  },
+  {
+    "domain": "ashlandoregon.gov",
+    "organization_name": "City of Ashland, Oregon",
+    "suborganization_name": "",
+    "state": "OR",
+    "domain_type": "City"
+  },
+  {
+    "domain": "portlandtx.gov",
+    "organization_name": "City of Portland",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "winchendon-ma.gov",
+    "organization_name": "Town of Winchendon MA",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "trumpcard.gov",
+    "organization_name": "Executive Office of the President",
+    "suborganization_name": "Department of Government Efficiency",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "louisiananetzero.gov",
+    "organization_name": "Louisiana Economic Development",
+    "suborganization_name": "",
+    "state": "LA",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "boroughofnewtownct.gov",
+    "organization_name": "Borough of Newtown",
+    "suborganization_name": "",
+    "state": "CT",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ashtabulacounty.gov",
+    "organization_name": "County of Ashtabula",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "County"
+  },
+  {
+    "domain": "prismrisk.gov",
+    "organization_name": "Public Risk Innovation, Solutions, and Management",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "hermiston.gov",
+    "organization_name": "City of Hermiston",
+    "suborganization_name": "",
+    "state": "OR",
+    "domain_type": "City"
+  },
+  {
+    "domain": "lewiscountyny.gov",
+    "organization_name": "Lewis County, NY",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "County"
+  },
+  {
+    "domain": "shippensburgpdpa.gov",
+    "organization_name": "Borough of Shippensburg",
+    "suborganization_name": "",
+    "state": "PA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "nemi.gov",
+    "organization_name": "Department of the Interior",
+    "suborganization_name": "United States Geological Survey",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "townofnewportny.gov",
+    "organization_name": "Town of Newport",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "madisoncountyal.gov",
+    "organization_name": "Madison County Commission",
+    "suborganization_name": "",
+    "state": "AL",
+    "domain_type": "County"
+  },
+  {
+    "domain": "rometownshipathcooh.gov",
+    "organization_name": "Rome Township",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "City"
+  },
+  {
+    "domain": "springdalesc.gov",
+    "organization_name": "Town of Springdale",
+    "suborganization_name": "",
+    "state": "SC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "waukesha-wi.gov",
+    "organization_name": "City of Waukesha",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ktik-nsn.gov",
+    "organization_name": "Kickapoo Tribe in Kansas",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "villageofhubbardston.gov",
+    "organization_name": "Village of Hubbardston",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "swhhsmn.gov",
+    "organization_name": "Southwest Health and Human Services",
+    "suborganization_name": "",
+    "state": "MN",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "comparecaremass.gov",
+    "organization_name": "Center for Health Information and Analysis",
+    "suborganization_name": "",
+    "state": "MA",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "scottky.gov",
+    "organization_name": "Scott County Fiscal Court",
+    "suborganization_name": "",
+    "state": "KY",
+    "domain_type": "County"
+  },
+  {
+    "domain": "morongo-nsn.gov",
+    "organization_name": "Morongo Band of Mission Indians",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "auroramo.gov",
+    "organization_name": "City of Aurora",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "City"
+  },
+  {
+    "domain": "prairieduchien-wi.gov",
+    "organization_name": "City of Prairie du Chien",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "archuletacounty.gov",
+    "organization_name": "Archuleta County, Colorado",
+    "suborganization_name": "",
+    "state": "CO",
+    "domain_type": "County"
+  },
+  {
+    "domain": "locketwpmi.gov",
+    "organization_name": "Locke Township",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City - Election"
+  },
+  {
+    "domain": "piermont-ny.gov",
+    "organization_name": "Village of Piermont",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "opioids.gov",
+    "organization_name": "Department of Health and Human Services",
+    "suborganization_name": "Office of the Secretary of Health and Human Services",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "padillabay.gov",
+    "organization_name": "Padilla Bay National Estuarine Research Reserve",
+    "suborganization_name": "",
+    "state": "WA",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "fairfieldtexas.gov",
+    "organization_name": "City of Fairfield, TX",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "clintoncomo.gov",
+    "organization_name": "Clinton County, MO",
+    "suborganization_name": "",
+    "state": "MO",
+    "domain_type": "County"
+  },
+  {
+    "domain": "smithsonian.gov",
+    "organization_name": "Smithsonian Institution",
+    "suborganization_name": "",
+    "state": "VA",
+    "domain_type": "Federal"
+  },
+  {
+    "domain": "gallatin-tn.gov",
+    "organization_name": "City of Gallatin",
+    "suborganization_name": "",
+    "state": "TN",
+    "domain_type": "City"
+  },
+  {
+    "domain": "bluegrass911.gov",
+    "organization_name": "Bluegrass 911 Central Communications",
+    "suborganization_name": "",
+    "state": "KY",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "richmondhill-ga.gov",
+    "organization_name": "City of Richmond Hill, Georgia",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "bedfordcountytn.gov",
+    "organization_name": "Bedford County Government",
+    "suborganization_name": "",
+    "state": "TN",
+    "domain_type": "County"
+  },
+  {
+    "domain": "bluemoundil.gov",
+    "organization_name": "Village of Blue Mound",
+    "suborganization_name": "",
+    "state": "IL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "codot.gov",
+    "organization_name": "Colorado Department of Transportation",
+    "suborganization_name": "",
+    "state": "CO",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "shavanoparktx.gov",
+    "organization_name": "City of Shavano Park",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "volentetexas.gov",
+    "organization_name": "Village of Volente",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "rothsay.gov",
+    "organization_name": "City of Rothsay",
+    "suborganization_name": "",
+    "state": "MN",
+    "domain_type": "City"
+  },
+  {
+    "domain": "northdakota.gov",
+    "organization_name": "State of ND, ITD",
+    "suborganization_name": "",
+    "state": "ND",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "financialresearch.gov",
+    "organization_name": "Department of the Treasury",
+    "suborganization_name": "Office of Financial Research (OFR)",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "southoldtownny.gov",
+    "organization_name": "Town of Southold",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "columbiatwpmi.gov",
+    "organization_name": "Columbia Township",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ohiocourtofclaims.gov",
+    "organization_name": "State of Ohio",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "friscowestwcidtx.gov",
+    "organization_name": "Frisco West Water Control & Improvement District",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "belaireks.gov",
+    "organization_name": "City of Bel Aire",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ashwaubenon.gov",
+    "organization_name": "Village of Ashwaubenon",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "ndhan.gov",
+    "organization_name": "State of ND, Information Technology Department",
+    "suborganization_name": "",
+    "state": "ND",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "townofmilfordny.gov",
+    "organization_name": "Town of Milford",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "azaccountancy.gov",
+    "organization_name": "AZ State Board of Accountancy",
+    "suborganization_name": "",
+    "state": "AZ",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "townofsturgeonbay-wi.gov",
+    "organization_name": "Town of Sturgeon Bay",
+    "suborganization_name": "",
+    "state": "WI",
+    "domain_type": "City"
+  },
+  {
+    "domain": "tomballtx.gov",
+    "organization_name": "City of Tomball",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "townoflafayetteny.gov",
+    "organization_name": "Town of LaFayette",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "floridatreasurehunt.gov",
+    "organization_name": "FL Dept of Financial Services",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "azsalud.gov",
+    "organization_name": "State of Arizona, Executive Branch",
+    "suborganization_name": "Arizona Department of Health Services",
+    "state": "AZ",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "odenvilleal.gov",
+    "organization_name": "City of Odenville",
+    "suborganization_name": "",
+    "state": "AL",
+    "domain_type": "City"
+  },
+  {
+    "domain": "millswy.gov",
+    "organization_name": "City of Mills",
+    "suborganization_name": "",
+    "state": "WY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "daltonga.gov",
+    "organization_name": "City of Dalton",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "mecklenburgcountync.gov",
+    "organization_name": "Mecklenburg County",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "County"
+  },
+  {
+    "domain": "cowlitzpfd.gov",
+    "organization_name": "Cowlitz County Public Facilities District",
+    "suborganization_name": "",
+    "state": "WA",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "greenwoodtwpcrawfordpa.gov",
+    "organization_name": "Greenwood Township",
+    "suborganization_name": "",
+    "state": "PA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "lexingtonnc.gov",
+    "organization_name": "City Of Lexington",
+    "suborganization_name": "",
+    "state": "NC",
+    "domain_type": "City"
+  },
+  {
+    "domain": "voteindiana.gov",
+    "organization_name": "Indiana Secretary of State",
+    "suborganization_name": "",
+    "state": "IN",
+    "domain_type": "State or territory - Election"
+  },
+  {
+    "domain": "rigatownshipmi.gov",
+    "organization_name": "Riga Township",
+    "suborganization_name": "",
+    "state": "MI",
+    "domain_type": "City - Election"
+  },
+  {
+    "domain": "sflhidta.gov",
+    "organization_name": "South Florida HIDTA",
+    "suborganization_name": "",
+    "state": "FL",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "flightrights.gov",
+    "organization_name": "Department of Transportation",
+    "suborganization_name": "U.S. Department of Transportation Office of Aviation Consumer Protection",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  },
+  {
+    "domain": "warrickcounty.gov",
+    "organization_name": "Warrick County Commissioners",
+    "suborganization_name": "",
+    "state": "IN",
+    "domain_type": "County"
+  },
+  {
+    "domain": "healthysd.gov",
+    "organization_name": "State of South Dakota",
+    "suborganization_name": "",
+    "state": "SD",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "townofsheldonny.gov",
+    "organization_name": "Town of Sheldon",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "uticany.gov",
+    "organization_name": "City of Utica",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "globeaz.gov",
+    "organization_name": "City of Globe",
+    "suborganization_name": "",
+    "state": "AZ",
+    "domain_type": "City"
+  },
+  {
+    "domain": "glennvillega.gov",
+    "organization_name": "City of Glennville",
+    "suborganization_name": "",
+    "state": "GA",
+    "domain_type": "City"
+  },
+  {
+    "domain": "snydertx.gov",
+    "organization_name": "City of Snyder",
+    "suborganization_name": "",
+    "state": "TX",
+    "domain_type": "City"
+  },
+  {
+    "domain": "cayuganationpolice.gov",
+    "organization_name": "CAYUGA NATION POLICE DEPARTMENT",
+    "suborganization_name": "",
+    "state": "NY",
+    "domain_type": "Tribal"
+  },
+  {
+    "domain": "ksabconline.gov",
+    "organization_name": "Kansas Department of Revenue",
+    "suborganization_name": "",
+    "state": "KS",
+    "domain_type": "State or territory"
+  },
+  {
+    "domain": "alexandriaky.gov",
+    "organization_name": "City of Alexandria",
+    "suborganization_name": "",
+    "state": "KY",
+    "domain_type": "City"
+  },
+  {
+    "domain": "sutter.gov",
+    "organization_name": "County of Sutter",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "County"
+  },
+  {
+    "domain": "bart.gov",
+    "organization_name": "San Francisco Bay Area Rapid Transit District",
+    "suborganization_name": "",
+    "state": "CA",
+    "domain_type": "Special district"
+  },
+  {
+    "domain": "federalregister.gov",
+    "organization_name": "Government Publishing Office",
+    "suborganization_name": "",
+    "state": "DC",
+    "domain_type": "Federal - Legislative"
+  },
+  {
+    "domain": "bethel-oh.gov",
+    "organization_name": "Village of Bethel",
+    "suborganization_name": "",
+    "state": "OH",
+    "domain_type": "City"
+  },
+  {
+    "domain": "treasury.gov",
+    "organization_name": "Department of the Treasury",
+    "suborganization_name": "Department of the Treasury - OCIO",
+    "state": "DC",
+    "domain_type": "Federal - Executive"
+  }
+]
