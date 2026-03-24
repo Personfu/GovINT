@@ -1,0 +1,642 @@
+project:
+  name: "FLLC - Personfu GovINT"
+  mission: "Open government reporting for public education and research"
+  updated_timezone: "UTC"
+
+topics:
+  CyberSecurity:
+    keywords:
+      - cisa
+      - cia
+      - fbi
+      - doj
+      - dhs
+      - nsa
+      - cyber
+      - cybersecurity
+      - infosec
+      - critical infrastructure
+      - incident response
+      - vulnerability
+      - exploit
+      - malware
+      - ransomware
+      - threat
+      - intrusion
+      - phishing
+      - botnet
+      - zero-day
+      - apt
+      - encryption
+      - secret service
+      - us-cert
+      - national vulnerability
+      - nvd
+      - cve
+      - mitre
+      - information assurance
+      - signals intelligence
+  IntelligenceCommunity:
+    keywords:
+      - intelligence
+      - odni
+      - dia
+      - nro
+      - nga
+      - nsa
+      - counterintelligence
+      - geospatial
+      - reconnaissance
+      - surveillance
+  JusticeAndLaw:
+    keywords:
+      - justice
+      - attorney
+      - marshal
+      - courts
+      - parole
+      - prison
+      - dea
+      - drug enforcement
+      - atf
+      - firearms
+      - sentencing
+      - probation
+      - prosecution
+      - law enforcement
+  DefenseAndMilitary:
+    keywords:
+      - defense
+      - army
+      - navy
+      - air force
+      - marine
+      - pentagon
+      - darpa
+      - dod
+      - joint chiefs
+      - combatant command
+      - space force
+      - national guard
+      - military
+      - corps of engineers
+  PublicSafety:
+    keywords:
+      - emergency
+      - disaster
+      - preparedness
+      - guard
+      - border
+      - coast
+      - fema
+      - tsa
+      - customs
+      - immigration
+      - secret service
+      - fire
+      - hazmat
+      - homeland
+  ScienceAndTechnology:
+    keywords:
+      - standards
+      - technology
+      - research
+      - laboratory
+      - energy
+      - nist
+      - nasa
+      - nsf
+      - noaa
+      - weather
+      - climate
+      - geological
+      - usgs
+      - patent
+      - innovation
+      - spectrum
+  FinanceAndEconomy:
+    keywords:
+      - treasury
+      - irs
+      - sec
+      - securities
+      - federal reserve
+      - fdic
+      - occ
+      - comptroller
+      - financial
+      - fiscal
+      - budget
+      - gao
+      - cbo
+      - debt
+      - tariff
+      - trade
+  HealthAndEnvironment:
+    keywords:
+      - health
+      - hhs
+      - cdc
+      - fda
+      - nih
+      - epa
+      - environment
+      - pollution
+      - pandemic
+      - vaccine
+      - drug safety
+      - public health
+      - medicare
+      - medicaid
+  TransportAndInfrastructure:
+    keywords:
+      - transportation
+      - faa
+      - fhwa
+      - highway
+      - railroad
+      - transit
+      - pipeline
+      - aviation
+      - maritime
+      - dot
+      - ntsb
+      - infrastructure
+
+public_sources:
+  # ── CyberSecurity ──────────────────────────────────
+  - id: cisa_alerts
+    topic: CyberSecurity
+    title: CISA News and Updates
+    url: "https://www.cisa.gov/news.xml"
+    type: rss
+  - id: cisa_advisories
+    topic: CyberSecurity
+    title: CISA Cybersecurity Advisories
+    url: "https://www.cisa.gov/cybersecurity-advisories/all.xml"
+    type: rss
+  - id: cisa_kev
+    topic: CyberSecurity
+    title: CISA Known Exploited Vulnerabilities
+    url: "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json"
+    type: json
+  - id: nsa_advisories
+    topic: CyberSecurity
+    title: NSA Cybersecurity Advisories
+    url: "https://www.nsa.gov/Press-Room/Cybersecurity-Advisories-Guidance/rss/"
+    type: rss
+  - id: nsa_press
+    topic: CyberSecurity
+    title: NSA Press Releases
+    url: "https://www.nsa.gov/Press-Room/Press-Releases-Statements/rss/"
+    type: rss
+  - id: nist_nvd
+    topic: CyberSecurity
+    title: NIST NVD — Recent CVEs
+    url: "https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml"
+    type: rss
+  - id: nist_news
+    topic: ScienceAndTechnology
+    title: NIST News
+    url: "https://www.nist.gov/news-events/news/rss.xml"
+    type: rss
+  - id: nist_cybersec
+    topic: CyberSecurity
+    title: NIST Cybersecurity News
+    url: "https://www.nist.gov/topics/cybersecurity/rss.xml"
+    type: rss
+  - id: uscert_alerts
+    topic: CyberSecurity
+    title: US-CERT Current Activity
+    url: "https://www.cisa.gov/uscert/ncas/current-activity.xml"
+    type: rss
+  - id: uscert_analysis
+    topic: CyberSecurity
+    title: US-CERT Analysis Reports
+    url: "https://www.cisa.gov/uscert/ncas/analysis-reports.xml"
+    type: rss
+
+  # ── Intelligence Community ─────────────────────────
+  - id: fbi_press
+    topic: CyberSecurity
+    title: FBI Press Releases
+    url: "https://www.fbi.gov/news/press-releases/rss.xml"
+    type: rss
+  - id: fbi_stories
+    topic: IntelligenceCommunity
+    title: FBI Stories
+    url: "https://www.fbi.gov/news/stories/rss.xml"
+    type: rss
+  - id: cia_press
+    topic: IntelligenceCommunity
+    title: CIA Press Releases
+    url: "https://www.cia.gov/stories/rss.xml"
+    type: rss
+  - id: dni_news
+    topic: IntelligenceCommunity
+    title: ODNI News
+    url: "https://www.dni.gov/index.php/newsroom/press-releases?format=feed&type=rss"
+    type: rss
+
+  # ── Justice & Law Enforcement ──────────────────────
+  - id: doj_press
+    topic: JusticeAndLaw
+    title: DOJ Press Releases
+    url: "https://www.justice.gov/opa/press-release/rss.xml"
+    type: rss
+  - id: doj_blog
+    topic: JusticeAndLaw
+    title: DOJ Justice Blog
+    url: "https://www.justice.gov/blogs/blogrss.xml"
+    type: rss
+  - id: dea_press
+    topic: JusticeAndLaw
+    title: DEA Press Releases
+    url: "https://www.dea.gov/press-releases/rss.xml"
+    type: rss
+  - id: atf_press
+    topic: JusticeAndLaw
+    title: ATF Press Releases
+    url: "https://www.atf.gov/news/rss.xml"
+    type: rss
+  - id: usms_press
+    topic: JusticeAndLaw
+    title: US Marshals News
+    url: "https://www.usmarshals.gov/news/rss.xml"
+    type: rss
+  - id: usss_press
+    topic: JusticeAndLaw
+    title: Secret Service Press
+    url: "https://www.secretservice.gov/newsroom/rss.xml"
+    type: rss
+
+  # ── Homeland Security & Public Safety ──────────────
+  - id: dhs_news
+    topic: PublicSafety
+    title: DHS News Releases
+    url: "https://www.dhs.gov/news-releases/press-releases/rss.xml"
+    type: rss
+  - id: cbp_news
+    topic: PublicSafety
+    title: CBP Newsroom
+    url: "https://www.cbp.gov/newsroom/rss.xml"
+    type: rss
+  - id: ice_news
+    topic: PublicSafety
+    title: ICE Newsroom
+    url: "https://www.ice.gov/news/rss.xml"
+    type: rss
+  - id: tsa_news
+    topic: PublicSafety
+    title: TSA News
+    url: "https://www.tsa.gov/news/rss.xml"
+    type: rss
+  - id: fema_news
+    topic: PublicSafety
+    title: FEMA News
+    url: "https://www.fema.gov/feeds/news_releases.rss"
+    type: rss
+  - id: uscg_news
+    topic: PublicSafety
+    title: US Coast Guard News
+    url: "https://www.news.uscg.mil/rss/"
+    type: rss
+
+  # ── Defense & Military ─────────────────────────────
+  - id: dod_news
+    topic: DefenseAndMilitary
+    title: DoD News
+    url: "https://www.defense.gov/DesktopModules/ArticleCS/RSS.ashx?max=20&ContentType=1&Site=945"
+    type: rss
+  - id: darpa_news
+    topic: DefenseAndMilitary
+    title: DARPA News
+    url: "https://www.darpa.mil/rss"
+    type: rss
+  - id: army_news
+    topic: DefenseAndMilitary
+    title: US Army News
+    url: "https://www.army.mil/rss/"
+    type: rss
+  - id: navy_news
+    topic: DefenseAndMilitary
+    title: US Navy News
+    url: "https://www.navy.mil/Press-Office/News-Stories/RSS/"
+    type: rss
+  - id: af_news
+    topic: DefenseAndMilitary
+    title: US Air Force News
+    url: "https://www.af.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=1060"
+    type: rss
+  - id: spaceforce_news
+    topic: DefenseAndMilitary
+    title: US Space Force News
+    url: "https://www.spaceforce.mil/DesktopModules/ArticleCS/RSS.ashx?ContentType=1&Site=1060"
+    type: rss
+
+  # ── Finance & Economy ──────────────────────────────
+  - id: sec_press
+    topic: FinanceAndEconomy
+    title: SEC Press Releases
+    url: "https://www.sec.gov/news/pressreleases.rss"
+    type: rss
+  - id: sec_litigation
+    topic: FinanceAndEconomy
+    title: SEC Litigation Releases
+    url: "https://www.sec.gov/rss/litigation/litreleases.xml"
+    type: rss
+  - id: treasury_press
+    topic: FinanceAndEconomy
+    title: Treasury Press Releases
+    url: "https://home.treasury.gov/news/press-releases/feed"
+    type: rss
+  - id: gao_reports
+    topic: FinanceAndEconomy
+    title: GAO Reports & Testimonies
+    url: "https://www.gao.gov/rss/reports.xml"
+    type: rss
+  - id: cbo_publications
+    topic: FinanceAndEconomy
+    title: CBO Publications
+    url: "https://www.cbo.gov/publications/all/rss.xml"
+    type: rss
+  - id: fdic_press
+    topic: FinanceAndEconomy
+    title: FDIC Press Releases
+    url: "https://www.fdic.gov/news/press/rss.xml"
+    type: rss
+  - id: fed_press
+    topic: FinanceAndEconomy
+    title: Federal Reserve Press
+    url: "https://www.federalreserve.gov/feeds/press_all.xml"
+    type: rss
+
+  # ── Health & Environment ───────────────────────────
+  - id: cdc_media
+    topic: HealthAndEnvironment
+    title: CDC Media Releases
+    url: "https://tools.cdc.gov/podcasts/feed.asp?feedid=183"
+    type: rss
+  - id: fda_press
+    topic: HealthAndEnvironment
+    title: FDA Press Announcements
+    url: "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml"
+    type: rss
+  - id: nih_news
+    topic: HealthAndEnvironment
+    title: NIH News Releases
+    url: "https://www.nih.gov/news-events/rss.xml"
+    type: rss
+  - id: epa_news
+    topic: HealthAndEnvironment
+    title: EPA Newsroom
+    url: "https://www.epa.gov/newsroom/rss.xml"
+    type: rss
+  - id: hhs_news
+    topic: HealthAndEnvironment
+    title: HHS News
+    url: "https://www.hhs.gov/about/news/rss/press-releases.xml"
+    type: rss
+
+  # ── Science & Technology ───────────────────────────
+  - id: nasa_breaking
+    topic: ScienceAndTechnology
+    title: NASA Breaking News
+    url: "https://www.nasa.gov/rss/dyn/breaking_news.rss"
+    type: rss
+  - id: nasa_image
+    topic: ScienceAndTechnology
+    title: NASA Image of the Day
+    url: "https://www.nasa.gov/rss/dyn/lg_image_of_the_day.rss"
+    type: rss
+  - id: noaa_news
+    topic: ScienceAndTechnology
+    title: NOAA News
+    url: "https://www.noaa.gov/news-features/rss.xml"
+    type: rss
+  - id: usgs_news
+    topic: ScienceAndTechnology
+    title: USGS News
+    url: "https://www.usgs.gov/news/all/feed"
+    type: rss
+  - id: nsf_news
+    topic: ScienceAndTechnology
+    title: NSF News
+    url: "https://new.nsf.gov/news/rss.xml"
+    type: rss
+  - id: doe_news
+    topic: ScienceAndTechnology
+    title: DOE Press Releases
+    url: "https://www.energy.gov/feeds/articles.xml"
+    type: rss
+
+  # ── Transportation & Infrastructure ────────────────
+  - id: faa_news
+    topic: TransportAndInfrastructure
+    title: FAA Press Releases
+    url: "https://www.faa.gov/newsroom/press_releases/rss"
+    type: rss
+  - id: ntsb_press
+    topic: TransportAndInfrastructure
+    title: NTSB Press Releases
+    url: "https://www.ntsb.gov/news/press-releases/rss.xml"
+    type: rss
+  - id: dot_briefing
+    topic: TransportAndInfrastructure
+    title: DOT Briefing Room
+    url: "https://www.transportation.gov/rss/briefing-room"
+    type: rss
+
+resource_links:
+  - topic: Camera Resources (Public Traffic)
+    title: Arizona 511 CCTV Portal
+    url: "https://www.az511.gov/cctv"
+    note: "Public transportation camera portal for traffic awareness."
+  - topic: Camera Resources (Public Traffic)
+    title: Arizona 511 Camera Map Example
+    url: "https://www.az511.gov/map/Cctv/812?t=1774330604"
+    note: "Example camera map entry."
+  - topic: Research Tools (External)
+    title: Shodan CCTV Query
+    url: "https://www.shodan.io/search?query=%22Cctv%22"
+    note: "For legal, defensive, and educational research only."
+  - topic: Research Tools (External)
+    title: Shodan Maps
+    url: "https://maps.shodan.io/"
+    note: "Global internet exposure visualization."
+  - topic: Research Tools (External)
+    title: Shodan Maps Arizona Example
+    url: "https://maps.shodan.io/#31.33864650754503/-110.93728065490724/14/satellite/"
+    note: "Example map location."
+  - topic: Research Tools (External)
+    title: Shodan US Gov Query
+    url: "https://www.shodan.io/search?query=%22gov%22+country%3A%22US%22"
+    note: "Use only with authorization and legal constraints."
+
+  # ── RecentlyBooked.com — Public Booking Records ──────────────────────
+  # Main portal
+  - topic: Public Records (Booking)
+    title: RecentlyBooked — All States
+    url: "https://recentlybooked.com/"
+    note: "Aggregated public booking records for education and research."
+  # ── State sub-pages ──
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Alabama"
+    url: "https://recentlybooked.com/al"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Arkansas"
+    url: "https://recentlybooked.com/ar"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Arizona"
+    url: "https://recentlybooked.com/az"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — California"
+    url: "https://recentlybooked.com/ca"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Colorado"
+    url: "https://recentlybooked.com/co"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Connecticut"
+    url: "https://recentlybooked.com/ct"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Florida"
+    url: "https://recentlybooked.com/fl"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Georgia"
+    url: "https://recentlybooked.com/ga"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Iowa"
+    url: "https://recentlybooked.com/ia"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Idaho"
+    url: "https://recentlybooked.com/id"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Illinois"
+    url: "https://recentlybooked.com/il"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Indiana"
+    url: "https://recentlybooked.com/in"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Kansas"
+    url: "https://recentlybooked.com/ks"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Kentucky"
+    url: "https://recentlybooked.com/ky"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Louisiana"
+    url: "https://recentlybooked.com/la"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Maryland"
+    url: "https://recentlybooked.com/md"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Maine"
+    url: "https://recentlybooked.com/me"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Michigan"
+    url: "https://recentlybooked.com/mi"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Minnesota"
+    url: "https://recentlybooked.com/mn"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Missouri"
+    url: "https://recentlybooked.com/mo"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Mississippi"
+    url: "https://recentlybooked.com/ms"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Montana"
+    url: "https://recentlybooked.com/mt"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — North Carolina"
+    url: "https://recentlybooked.com/nc"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — North Dakota"
+    url: "https://recentlybooked.com/nd"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Nebraska"
+    url: "https://recentlybooked.com/ne"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — New Hampshire"
+    url: "https://recentlybooked.com/nh"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — New Jersey"
+    url: "https://recentlybooked.com/nj"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — New Mexico"
+    url: "https://recentlybooked.com/nm"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Nevada"
+    url: "https://recentlybooked.com/nv"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — New York"
+    url: "https://recentlybooked.com/ny"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Ohio"
+    url: "https://recentlybooked.com/oh"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Oklahoma"
+    url: "https://recentlybooked.com/ok"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Oregon"
+    url: "https://recentlybooked.com/or"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Pennsylvania"
+    url: "https://recentlybooked.com/pa"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — South Carolina"
+    url: "https://recentlybooked.com/sc"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — South Dakota"
+    url: "https://recentlybooked.com/sd"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Tennessee"
+    url: "https://recentlybooked.com/tn"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Texas"
+    url: "https://recentlybooked.com/tx"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Utah"
+    url: "https://recentlybooked.com/ut"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Virginia"
+    url: "https://recentlybooked.com/va"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Vermont"
+    url: "https://recentlybooked.com/vt"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Washington"
+    url: "https://recentlybooked.com/wa"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Wisconsin"
+    url: "https://recentlybooked.com/wi"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — West Virginia"
+    url: "https://recentlybooked.com/wv"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — Wyoming"
+    url: "https://recentlybooked.com/wy"
+  # ── Arizona county sub-pages ──
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Apache County"
+    url: "https://recentlybooked.com/az/apache"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Cochise County"
+    url: "https://recentlybooked.com/az/cochise"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Maricopa County"
+    url: "https://recentlybooked.com/az/maricopa"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Mohave County"
+    url: "https://recentlybooked.com/az/mohave"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Navajo County"
+    url: "https://recentlybooked.com/az/navajo"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Pinal County"
+    url: "https://recentlybooked.com/az/pinal"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Yavapai County"
+    url: "https://recentlybooked.com/az/yavapai"
+  - topic: Public Records (Booking)
+    title: "RecentlyBooked — AZ — Yuma County"
+    url: "https://recentlybooked.com/az/yuma"
