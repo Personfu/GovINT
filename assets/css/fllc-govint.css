@@ -878,8 +878,8 @@ a:hover { color: var(--accent-bright); text-decoration: underline; }
 
 /* -- Responsive Images -- */
 iframe {
-  width: 50%;
-  max-width: 400px;
+  width: 1000%;
+  max-width: auto;
   height: auto;
   display: block;
   object-fit: contain;
