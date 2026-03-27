@@ -6,6 +6,46 @@
 <title>Mission Control — PERSONFU // Arizona Public Intel Wiki</title>
 <link rel="stylesheet" href="assets/css/fllc-govint.css">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<style>
+/* Responsive iframe grid styling */
+.dod-iframe-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  justify-content: center;
+}
+.dod-iframe-item {
+  flex: 1 1 370px;
+  min-width: 320px;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dod-iframe-item iframe {
+  width: 100%;
+  height: 240px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #222;
+}
+.dod-iframe-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 1.02em;
+  text-align: center;
+  color: #8ac;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 1000px) {
+  .dod-iframe-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -44,92 +84,47 @@
 </div>
 
 <div class="page-wrap">
-  <div class="section-hero">
-    <h2>Mission Control</h2>
-    <p>Public intelligence aggregation covering Arizona cybersecurity, government operations, defense installations, border infrastructure, declassified history, and anomalies. All sources public. All data verifiable.</p>
-    <div style="margin-top:12px">
-      <span class="rel-badge rel-official">PUBLIC SOURCES ONLY</span>
-      <span class="rel-badge rel-verified" style="margin-left:4px">EDUCATIONAL USE</span>
-    </div>
-  </div>
+  <!-- ...existing page content... -->
 
-  <div class="grid-4 mb-2">
-    <div class="kpi"><div class="kpi-val" id="kpi-advisories">&mdash;</div><div class="kpi-label">Advisories Today</div></div>
-    <div class="kpi"><div class="kpi-val violet" id="kpi-agencies">15</div><div class="kpi-label">Agencies Tracked</div></div>
-    <div class="kpi"><div class="kpi-val green" id="kpi-cameras">&mdash;</div><div class="kpi-label">Live Cameras</div></div>
-    <div class="kpi"><div class="kpi-val gold" id="kpi-update">&mdash;</div><div class="kpi-label">Last Update</div></div>
-  </div>
+  <!-- Place DoD iframe grid here, after main dashboard widgets or beneath document vault if you like -->
+  <section style="margin-top:48px">
+    <div class="page-title" style="font-size:18px;">DoD Cyber Training Simulations</div>
+    <div class="dod-iframe-grid">
+      <div class="dod-iframe-item">
+        <div class="dod-iframe-title">CAC Game 08</div>
+        <iframe
+          src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac08_02.html"
+          allowfullscreen
+          loading="lazy"
+          title="DoD CAC Game 8">
+        </iframe>
+      </div>
+      <div class="dod-iframe-item">
+        <div class="dod-iframe-title">CAC Game 14</div>
+        <iframe
+          src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac14_02.html"
+          allowfullscreen
+          loading="lazy"
+          title="DoD CAC Game 14">
+        </iframe>
+      </div>
+      <div class="dod-iframe-item">
+        <div class="dod-iframe-title">CAC Game 04</div>
+        <iframe
+          src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac04_02.html"
+          allowfullscreen
+          loading="lazy"
+          title="DoD CAC Game 4">
+        </iframe>
+      </div>
+    </div>
+    <div style="font-size:13px; color:#888; text-align:center; margin-top:8px">
+      Publicly accessible DoD cyber training modules. For educational/research use.
+    </div>
+  </section>
+  <!-- ...continued page content... -->
 
-  <div class="grid-3 mb-2">
-    <div class="card span-2">
-      <div class="card-head"><span class="dot red"></span>Latest Cyber Advisories</div>
-      <div class="card-body" id="dash-cyber"><div class="loading">Loading CISA / FBI / DOJ advisories</div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><span class="dot magenta"></span>Featured Rabbit Hole</div>
-      <div class="card-body" id="dash-rabbit"><div class="loading">Loading featured deep-dive</div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><span class="dot blue"></span>Arizona Map &mdash; Key Locations</div>
-      <div class="card-body"><div id="dash-map" class="map-container" style="height:300px"></div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><span class="dot amber"></span>Infrastructure &amp; Weather</div>
-      <div class="card-body" id="dash-infra"><div class="loading">Loading infrastructure alerts</div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><span class="dot"></span>Domain Intelligence</div>
-      <div class="card-body" id="dash-domains"><div class="loading">Loading .gov summary</div></div>
-    </div>
-  </div>
-
-  <div class="page-title" style="font-size:16px;margin-top:24px">Content Pillars</div>
-  <div class="page-sub">Deep-dive into Arizona&#39;s public intelligence landscape</div>
-
-  <div class="portal-grid mb-2">
-    <a href="arizona.html" class="portal-card">
-      <div class="pc-icon">🌵</div>
-      <div class="pc-title">Arizona Watch</div>
-      <div class="pc-desc">Statewide monitoring: weather, fires, border activity, infrastructure status, and breaking developments.</div>
-    </a>
-    <a href="cyber.html" class="portal-card">
-      <div class="pc-icon">🛡️</div>
-      <div class="pc-title">Cybersecurity</div>
-      <div class="pc-desc">CISA advisories, KEV catalog, FBI/DOJ cyber press, DHS notices, and Arizona-specific cyber incidents.</div>
-    </a>
-    <a href="government.html" class="portal-card">
-      <div class="pc-icon">🏛️</div>
-      <div class="pc-title">Government</div>
-      <div class="pc-desc">.gov domain analysis, federal agency tracking, public corruption cases, policy changes, and tribal governance.</div>
-    </a>
-    <a href="defense.html" class="portal-card">
-      <div class="pc-icon">🛩️</div>
-      <div class="pc-title">Defense &amp; Aerospace</div>
-      <div class="pc-desc">Fort Huachuca, Davis-Monthan, Luke AFB, Yuma Proving Ground, classified programs, and the aerospace corridor.</div>
-    </a>
-    <a href="borders.html" class="portal-card">
-      <div class="pc-icon">🚧</div>
-      <div class="pc-title">Border &amp; Public Safety</div>
-      <div class="pc-desc">Tucson &amp; Yuma sectors, surveillance tech, CBP operations, border infrastructure, and public safety alerts.</div>
-    </a>
-    <a href="anomalies.html" class="portal-card">
-      <div class="pc-icon">👽</div>
-      <div class="pc-title">Anomalies</div>
-      <div class="pc-desc">Phoenix Lights, UAP reports, Sedona vortexes, Superstition Mountains, folklore, and the unexplained.</div>
-    </a>
-  </div>
-
-  <div class="grid-2 mt-2">
-    <div class="card">
-      <div class="card-head"><span class="dot gold"></span>Daily Brief</div>
-      <div class="card-body" id="dash-brief"><div class="loading">Loading daily brief</div></div>
-    </div>
-    <div class="card">
-      <div class="card-head"><span class="dot"></span>Source Health</div>
-      <div class="card-body" id="dash-health"><div class="loading">Loading source status</div></div>
-    </div>
-  </div>
-
+  <!-- Rest of your dashboard content can go here -->
   <div class="card mt-2">
     <div class="card-head"><span class="dot violet"></span>Document Vault — Recent Additions</div>
     <div class="card-body" id="dash-docs"><div class="loading">Loading documents</div></div>
@@ -152,6 +147,7 @@
   <span style="margin-left:auto">Educational &amp; Research Use Only</span>
 </div>
 
+<!-- All scripts go at the end, and contain only JS, not iframes -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/feed-loader.js"></script>
@@ -260,35 +256,6 @@
     el.innerHTML=h;
   });
 
-// DoD Games
-<iframe
-  src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac08_02.html"
-  width="1280"
-  height="720"
-  allowfullscreen>
-</iframe>
-
-<iframe
-  src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac14_02.html"
-  width="1280"
-  height="720"
-  allowfullscreen>
-</iframe>
-
-  <iframe
-  src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac08_02.html"
-  width="1280"
-  height="720"
-  allowfullscreen>
-</iframe>
-
-  <iframe
-  src="https://dl.dod.cyber.mil/wp-content/uploads/trn/online/disa-cac-2026/cac-2026-web+Public/pages/disacac04_02.html"
-  width="1280"
-  height="720"
-  allowfullscreen>
-</iframe>
-  
   // Map - Arizona focused
   setTimeout(function(){
     if(typeof L!=='undefined'&&document.getElementById('dash-map')){
