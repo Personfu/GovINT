@@ -877,7 +877,7 @@ a:hover { color: var(--accent-bright); text-decoration: underline; }
 .hidden { display: none; }
 
 /* -- Responsive Images -- */
-img {
+iframe {
   width: 50%;
   max-width: 400px;
   height: auto;
