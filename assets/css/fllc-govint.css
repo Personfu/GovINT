@@ -875,3 +875,11 @@ a:hover { color: var(--accent-bright); text-decoration: underline; }
 .gap-1 { gap: 8px; }
 .gap-2 { gap: 16px; }
 .hidden { display: none; }
+
+/* -- Responsive Images -- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* or 'cover', but 'contain' usually prevents cropping */
+}
