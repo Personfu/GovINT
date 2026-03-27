@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-26",
-  "fetched_at": "2026-03-26T11:35:56.688188Z",
+  "date": "2026-03-27",
+  "fetched_at": "2026-03-27T11:32:20.859840Z",
   "total_items": 150,
-  "summary": "GOVINT collected 150 items from 4 sources on 2026-03-26.",
+  "summary": "GOVINT collected 150 items from 4 sources on 2026-03-27.",
   "source_counts": {
     "CISA-KEV": 50,
     "NWS": 50,
@@ -17,54 +17,54 @@
   },
   "notable": [
     {
-      "title": "CVE-2026-20127 \u2014 Cisco Catalyst SD-WAN Controller and Manager",
-      "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20127",
-      "source": "CISA-KEV"
+      "title": "Markwayne Mullin",
+      "url": "https://www.dhs.gov/markwayne-mullin",
+      "source": "DHS"
     },
     {
-      "title": "CISA Adds One Known Exploited Vulnerability to Catalog",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/03/25/cisa-adds-one-known-exploited-vulnerability-catalog",
-      "source": "CISA"
+      "title": "ICE Letter to Representative Escobar re: Interactions with ICE and ICE detainees",
+      "url": "https://www.dhs.gov/publication/ice-letter-representative-escobar-re-interactions-ice-and-ice-detainees",
+      "source": "DHS"
     },
     {
-      "title": "Pharos Controls Mosaic Show Controller",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-083-01",
-      "source": "CISA"
+      "title": "Mike Fullerton",
+      "url": "https://www.dhs.gov/person/mike-fullerton",
+      "source": "DHS"
     },
     {
-      "title": "Schneider Electric Plant iT/Brewmaxx",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-083-03",
-      "source": "CISA"
+      "title": "U.S. Coast Guard Board for Correction of Military Records ruling",
+      "url": "https://www.dhs.gov/publication/us-coast-guard-board-correction-military-records-ruling",
+      "source": "DHS"
     },
     {
-      "title": "Schneider Electric EcoStruxure Foxboro DCS",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-083-02",
-      "source": "CISA"
+      "title": "Eric A. Ruark",
+      "url": "https://www.dhs.gov/person/eric-ruark",
+      "source": "DHS"
     },
     {
-      "title": "Grassroots DICOM (GDCM)",
-      "url": "https://www.cisa.gov/news-events/ics-medical-advisories/icsma-26-083-01",
-      "source": "CISA"
+      "title": "Matthew Toplak",
+      "url": "https://www.dhs.gov/person/matthew-toplak",
+      "source": "DHS"
     },
     {
-      "title": "CISA Adds Five Known Exploited Vulnerabilities to Catalog",
-      "url": "https://www.cisa.gov/news-events/alerts/2026/03/20/cisa-adds-five-known-exploited-vulnerabilities-catalog",
-      "source": "CISA"
+      "title": "Elizabeth \u201cLizzie\u201d Tarr",
+      "url": "https://www.dhs.gov/person/elizabeth-lizzie-tarr",
+      "source": "DHS"
     },
     {
-      "title": "Russian Intelligence Services Target Commercial Messaging Application Accounts",
-      "url": "https://www.cisa.gov/resources-tools/resources/russian-intelligence-services-target-commercial-messaging-application-accounts",
-      "source": "CISA"
+      "title": "John. T. Stirrup, Jr.",
+      "url": "https://www.dhs.gov/person/john-t-stirrup-jr",
+      "source": "DHS"
     },
     {
-      "title": "Schneider Electric EcoStruxure Automation Expert",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-078-03",
-      "source": "CISA"
+      "title": "William \"Clark\" Barrow",
+      "url": "https://www.dhs.gov/person/william-clark-barrow",
+      "source": "DHS"
     },
     {
-      "title": "Schneider Electric Modicon Controllers M241, M251, M258, and LMC058",
-      "url": "https://www.cisa.gov/news-events/ics-advisories/icsa-26-078-02",
-      "source": "CISA"
+      "title": "Thomas B. \u201cTom\u201d Bourne V",
+      "url": "https://www.dhs.gov/person/thomas-b-tom-bourne-v",
+      "source": "DHS"
     }
   ]
 }
