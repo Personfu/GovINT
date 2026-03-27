@@ -878,7 +878,7 @@ a:hover { color: var(--accent-bright); text-decoration: underline; }
 
 /* -- Responsive Images -- */
 img {
-  max-width: 100%;
+  max-width: 30%;
   height: auto;
   display: block;
   object-fit: contain; /* or 'cover', but 'contain' usually prevents cropping */
