@@ -1,8 +1,8 @@
 {
-  "date": "2026-03-31",
-  "fetched_at": "2026-03-31T11:35:09.243521Z",
+  "date": "2026-04-01",
+  "fetched_at": "2026-04-01T11:36:06.688801Z",
   "total_items": 150,
-  "summary": "GOVINT collected 150 items from 4 sources on 2026-03-31.",
+  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-01.",
   "source_counts": {
     "CISA-KEV": 50,
     "NWS": 50,
