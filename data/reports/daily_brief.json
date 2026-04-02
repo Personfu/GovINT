@@ -1,8 +1,8 @@
 {
-  "date": "2026-04-01",
-  "fetched_at": "2026-04-01T11:36:06.688801Z",
+  "date": "2026-04-02",
+  "fetched_at": "2026-04-02T11:34:04.009271Z",
   "total_items": 150,
-  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-01.",
+  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-02.",
   "source_counts": {
     "CISA-KEV": 50,
     "NWS": 50,
@@ -13,7 +13,7 @@
     "cybersecurity": 100,
     "public-safety": 60,
     "weather": 50,
-    "ransomware": 3
+    "ransomware": 2
   },
   "notable": [
     {
