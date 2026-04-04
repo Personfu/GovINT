@@ -1,8 +1,8 @@
 {
-  "date": "2026-04-03",
-  "fetched_at": "2026-04-03T11:29:44.590296Z",
+  "date": "2026-04-04",
+  "fetched_at": "2026-04-04T11:27:40.393022Z",
   "total_items": 150,
-  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-03.",
+  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-04.",
   "source_counts": {
     "CISA-KEV": 50,
     "NWS": 50,
@@ -16,6 +16,11 @@
     "ransomware": 2
   },
   "notable": [
+    {
+      "title": "K2P Anniversary",
+      "url": "https://www.dhs.gov/know2protect/anniversary",
+      "source": "DHS"
+    },
     {
       "title": "Markwayne Mullin",
       "url": "https://www.dhs.gov/markwayne-mullin",
@@ -59,11 +64,6 @@
     {
       "title": "William \"Clark\" Barrow",
       "url": "https://www.dhs.gov/person/william-clark-barrow",
-      "source": "DHS"
-    },
-    {
-      "title": "Thomas B. \u201cTom\u201d Bourne V",
-      "url": "https://www.dhs.gov/person/thomas-b-tom-bourne-v",
       "source": "DHS"
     }
   ]
