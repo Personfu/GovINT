@@ -1,8 +1,8 @@
 {
-  "date": "2026-04-04",
-  "fetched_at": "2026-04-04T11:27:40.393022Z",
+  "date": "2026-04-05",
+  "fetched_at": "2026-04-05T11:27:49.903029Z",
   "total_items": 150,
-  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-04.",
+  "summary": "GOVINT collected 150 items from 4 sources on 2026-04-05.",
   "source_counts": {
     "CISA-KEV": 50,
     "NWS": 50,
@@ -16,6 +16,21 @@
     "ransomware": 2
   },
   "notable": [
+    {
+      "title": "National Historic Preservation Act, Section 106 - Public Comment Notice",
+      "url": "https://www.dhs.gov/publication/national-historic-preservation-act-section-106-public-comment-notice",
+      "source": "DHS"
+    },
+    {
+      "title": "Congressional Budget Justification Fiscal Year (FY) 2027",
+      "url": "https://www.dhs.gov/publication/congressional-budget-justification-fiscal-year-fy-2027",
+      "source": "DHS"
+    },
+    {
+      "title": "Fiscal Year (FY) 2027 Budget-in-Brief",
+      "url": "https://www.dhs.gov/publication/fiscal-year-fy-2027-budget-brief",
+      "source": "DHS"
+    },
     {
       "title": "K2P Anniversary",
       "url": "https://www.dhs.gov/know2protect/anniversary",
@@ -49,21 +64,6 @@
     {
       "title": "Matthew Toplak",
       "url": "https://www.dhs.gov/person/matthew-toplak",
-      "source": "DHS"
-    },
-    {
-      "title": "Elizabeth \u201cLizzie\u201d Tarr",
-      "url": "https://www.dhs.gov/person/elizabeth-lizzie-tarr",
-      "source": "DHS"
-    },
-    {
-      "title": "John. T. Stirrup, Jr.",
-      "url": "https://www.dhs.gov/person/john-t-stirrup-jr",
-      "source": "DHS"
-    },
-    {
-      "title": "William \"Clark\" Barrow",
-      "url": "https://www.dhs.gov/person/william-clark-barrow",
       "source": "DHS"
     }
   ]
